@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  strapi:
+    image: strapi/strapi:latest
+    container_name: strapi
+    environment:
+      - DATABASE_CLIENT=sqlite
+      - NODE_ENV=production
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./app:/srv/app
+      - ./uploads:/srv/app/public/uploads
+    restart: unless-stopped
+
+volumes:
+  strapi-app:
+  strapi-uploads:
+
+

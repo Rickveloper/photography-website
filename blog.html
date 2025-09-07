@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal | Rick Fryou</title>
-    <meta name="description" content="Thoughts, stories, and behind-the-scenes from coastal Maine landscape photography.">
-    
+    <title>Journal | Fryou Photography</title>
+    <meta name="description"
+        content="Thoughts, stories, and behind-the-scenes from coastal Maine landscape photography.">
+
     <!-- OpenGraph / Twitter -->
-    <meta property="og:title" content="Journal | Rick Fryou">
-    <meta property="og:description" content="Thoughts, stories, and behind-the-scenes from coastal Maine landscape photography.">
+    <meta property="og:title" content="Journal | Fryou Photography">
+    <meta property="og:description"
+        content="Thoughts, stories, and behind-the-scenes from coastal Maine landscape photography.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rickfryou.com/blog">
-    <meta property="og:image" content="https://rickfryou.com/assets/og-image.jpg">
+    <meta property="og:url" content="blog.html">
+    <meta property="og:image" content="assets/hero.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.webmanifest">
-    
+
+
     <!-- Styles & Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -57,73 +59,99 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.min.js"></script>
-    
+    <script src="assets/js/lazy-observer.js" defer></script>
+    <script>
+        // Production CMS endpoint. Include port if not reverse-proxied.
+        window.CMS_BASE = "http://YOUR_SERVER_OR_DOMAIN:1337";
+    </script>
+    <script src="assets/js/cms.js" defer></script>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     <style>
         html {
             scroll-behavior: smooth;
         }
+
         body {
             @apply bg-dark-900 text-gray-100 font-sans antialiased;
         }
+
         .prose {
             @apply max-w-none;
         }
+
         .prose h2 {
             @apply text-2xl font-bold mt-8 mb-4 text-white;
         }
+
         .prose h3 {
             @apply text-xl font-bold mt-6 mb-3 text-white;
         }
+
         .prose p {
             @apply text-gray-400 mb-4 leading-relaxed;
         }
+
         .prose a {
             @apply text-ocean-400 hover:underline;
         }
+
         .prose blockquote {
             @apply border-l-4 border-ocean-500 pl-4 italic text-gray-300 my-6;
         }
+
         .prose ul {
             @apply list-disc pl-5 mb-4;
         }
+
         .prose li {
             @apply text-gray-400 mb-2;
         }
+
         .image-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .image-hover:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
+
 <body class="min-h-screen">
     <!-- Header -->
     <header class="fixed w-full z-50 bg-dark-900 shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold tracking-tight text-white">
-                <svg width="160" height="32" viewBox="0 0 160 32" aria-label="Rick Fryou" class="h-8">
-                    <path fill="currentColor" d="M20 8h4v16h-4V8zm-12 0h4v16H8V8zm24 0h4v16h-4V8zm-12 0h4v16h-4V8zm28 0h4v16h-4V8zm-12 0h4v16h-4V8z"/>
+        <div class="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tight text-white whitespace-nowrap justify-self-start">
+                <svg width="160" height="32" viewBox="0 0 160 32" aria-label="Fryou Photography" class="h-8">
+                    <path fill="currentColor"
+                        d="M20 8h4v16h-4V8zm-12 0h4v16H8V8zm24 0h4v16h-4V8zm-12 0h4v16h-4V8zm28 0h4v16h-4V8zm-12 0h4v16h-4V8z" />
                 </svg>
             </a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="/#portfolio" class="text-gray-300 hover:text-white transition">Portfolio</a>
-                <a href="/blog" class="text-ocean-400 hover:text-white transition">Blog</a>
-                <a href="/#about" class="text-gray-300 hover:text-white transition">About</a>
-                <a href="/#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+            <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
+                <a href="index.html" class="text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="text-ocean-400 hover:text-white transition">Blog</a>
+                <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html" class="text-gray-300 hover:text-white transition">Shop</a>
             </nav>
-            <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+            <button class="md:hidden focus:outline-none justify-self-end" id="mobile-menu-button"
+                aria-label="Open menu">
                 <i data-feather="menu" class="text-white"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
-            <div class="flex flex-col space-y-4">
-                <a href="/#portfolio" class="text-gray-300 hover:text-white transition">Portfolio</a>
-                <a href="/blog" class="text-ocean-400 hover:text-white transition">Blog</a>
-                <a href="/#about" class="text-gray-300 hover:text-white transition">About</a>
-                <a href="/#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+        <div class="md:hidden hidden bg-dark-800 w-full py-3 px-6" id="mobile-menu">
+            <div class="flex flex-col space-y-2 items-center text-center">
+                <a href="index.html" class="block px-4 py-2 text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="block px-4 py-2 text-ocean-400 hover:text-white transition">Blog</a>
+                <a href="about.html" class="block px-4 py-2 text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="block px-4 py-2 text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html"
+                    class="block px-4 py-2 text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
             </div>
         </div>
     </header>
@@ -139,149 +167,70 @@
                     Thoughts, stories, and behind-the-scenes from coastal Maine landscape photography.
                 </p>
             </div>
-            
+
             <!-- Blog Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-                <!-- Blog Post 1 -->
-                <a href="/blog/chasing-winter-storms" class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover" data-aos="fade-up">
-                    <picture>
-                        <source srcset="/assets/blog/winter-storm.webp" type="image/webp">
-                        <img src="/assets/blog/winter-storm.jpg" alt="Winter Storm" class="w-full h-48 md:h-56 object-cover" loading="lazy">
-                    </picture>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">Chasing Winter Storms</h3>
-                        <p class="text-gray-300 mb-4">January 15, 2023</p>
-                        <p class="text-gray-400">Braving sub-zero temperatures to capture the raw power of nor'easters along the Maine coast.</p>
-                        <div class="mt-4 text-ocean-400 flex items-center">
-                            Read More
-                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Blog Post 2 -->
-                <a href="/blog/solitude-of-fog" class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover" data-aos="fade-up" data-aos-delay="100">
-                    <picture>
-                        <source srcset="/assets/blog/foggy-morning.webp" type="image/webp">
-                        <img src="/assets/blog/foggy-morning.jpg" alt="Foggy Morning" class="w-full h-48 md:h-56 object-cover" loading="lazy">
-                    </picture>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">The Solitude of Fog</h3>
-                        <p class="text-gray-300 mb-4">June 2, 2023</p>
-                        <p class="text-gray-400">How coastal fog transforms familiar landscapes into mysterious, minimalist compositions.</p>
-                        <div class="mt-4 text-ocean-400 flex items-center">
-                            Read More
-                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Blog Post 3 -->
-                <a href="/blog/autumn-palette" class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover" data-aos="fade-up" data-aos-delay="200">
-                    <picture>
-                        <source srcset="/assets/blog/autumn-colors.webp" type="image/webp">
-                        <img src="/assets/blog/autumn-colors.jpg" alt="Autumn Colors" class="w-full h-48 md:h-56 object-cover" loading="lazy">
-                    </picture>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">Maine's Autumn Palette</h3>
-                        <p class="text-gray-300 mb-4">October 12, 2023</p>
-                        <p class="text-gray-400">Exploring the brief but spectacular fall foliage season along coastal inlets and forest trails.</p>
-                        <div class="mt-4 text-ocean-400 flex items-center">
-                            Read More
-                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Blog Post 4 -->
-                <a href="/blog/lighthouse-keeper" class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover" data-aos="fade-up">
-                    <picture>
-                        <source srcset="/assets/blog/lighthouse.webp" type="image/webp">
-                        <img src="/assets/blog/lighthouse.jpg" alt="Lighthouse" class="w-full h-48 md:h-56 object-cover" loading="lazy">
-                    </picture>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">The Lighthouse Keeper's View</h3>
-                        <p class="text-gray-300 mb-4">March 8, 2023</p>
-                        <p class="text-gray-400">Documenting a week spent with the last keeper of a remote Maine lighthouse.</p>
-                        <div class="mt-4 text-ocean-400 flex items-center">
-                            Read More
-                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Blog Post 5 -->
-                <a href="/blog/ice-formations" class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover" data-aos="fade-up" data-aos-delay="100">
-                    <picture>
-                        <source srcset="/assets/blog/ice.webp" type="image/webp">
-                        <img src="/assets/blog/ice.jpg" alt="Ice Formations" class="w-full h-48 md:h-56 object-cover" loading="lazy">
-                    </picture>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">Abstract Ice Formations</h3>
-                        <p class="text-gray-300 mb-4">February 22, 2023</p>
-                        <p class="text-gray-400">Finding unexpected beauty in the frozen tidal zones of Casco Bay.</p>
-                        <div class="mt-4 text-ocean-400 flex items-center">
-                            Read More
-                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Blog Post 6 -->
-                <a href="/blog/gear-essentials" class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover" data-aos="fade-up" data-aos-delay="200">
-                    <picture>
-                        <source srcset="/assets/blog/gear.webp" type="image/webp">
-                        <img src="/assets/blog/gear.jpg" alt="Photography Gear" class="w-full h-48 md:h-56 object-cover" loading="lazy">
-                    </picture>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">Coastal Photography Gear Essentials</h3>
-                        <p class="text-gray-300 mb-4">May 15, 2023</p>
-                        <p class="text-gray-400">The equipment that survives salt spray, freezing temps, and everything in between.</p>
-                        <div class="mt-4 text-ocean-400 flex items-center">
-                            Read More
-                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </div>
-                    </div>
-                </a>
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12 items-stretch cv-auto">
             </div>
-            
+
             <!-- Pagination -->
             <div class="flex justify-center mt-8">
                 <nav class="flex items-center space-x-2">
-                    <a href="#" class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">&laquo;</a>
-                    <a href="#" class="px-4 py-2 bg-ocean-600 text-white rounded-sm">1</a>
-                    <a href="#" class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">2</a>
-                    <a href="#" class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">3</a>
-                    <a href="#" class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">&raquo;</a>
+                    <a href="#" aria-label="Previous page"
+                        class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">&laquo;</a>
+                    <a href="#" class="px-4 py-2 bg-ocean-600 text-white rounded-sm" aria-current="page">1</a>
+                    <a href="#" aria-label="Page 2"
+                        class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">2</a>
+                    <a href="#" aria-label="Page 3"
+                        class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">3</a>
+                    <a href="#" aria-label="Next page"
+                        class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">&raquo;</a>
                 </nav>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark-900 py-12">
+    <footer class="mt-20 border-t border-white/10 py-12 text-gray-400 text-sm break-normal">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <a href="/" class="text-2xl font-bold tracking-tight text-white">RICK FRYOU</a>
-                    <p class="text-gray-500 mt-2">Coastal Maine Landscape Photography</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="index.html" class="text-2xl font-bold tracking-tight text-white whitespace-nowrap">Fryou
+                        Photography</a>
+                    <p class="text-gray-500 text-sm">Coastal Maine Landscape Photography</p>
                 </div>
-                
-                <div class="flex space-x-6 mb-6 md:mb-0">
-                    <a href="https://instagram.com/rickfryou" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
-                        <i data-feather="instagram" class="w-5 h-5"></i>
-                    </a>
-                    <a href="https://github.com/rickfryou" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
-                        <i data-feather="github" class="w-5 h-5"></i>
-                    </a>
-                    <a href="/rss.xml" class="text-gray-400 hover:text-white transition" title="RSS Feed">
-                        <i data-feather="rss" class="w-5 h-5"></i>
-                    </a>
+                <div class="flex flex-col items-center text-center">
+                    <div class="flex items-center gap-8">
+                        <a href="https://www.instagram.com/fryouphotography/" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="Instagram">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="shop.html"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            title="Shop" aria-label="Shop">
+                            <i data-feather="shopping-cart" class="w-5 h-5"></i>
+                        </a>
+                        <a href="rss.xml"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            title="RSS Feed" aria-label="RSS Feed">
+                            <i data-feather="rss" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
                 </div>
-                
-                <div class="text-gray-500 text-sm">
-                    <p>&copy; <span id="year"></span> Rick Fryou. All rights reserved.</p>
-                    <p class="mt-1">Built with <span class="text-ocean-400">DeepSite</span></p>
+                <div class="text-center">
+                    <p>&copy; <span id="year"></span> All rights reserved.</p>
+                    <p>Fryou Photography</p>
+                    <p>Built by <a href="https://github.com/rickveloper"
+                            class="text-ocean-400 hover:underline">Rickveloper</a></p>
+                    <div class="mt-4 flex justify-center">
+                        <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-sm bg-[#FFDD00] text-black hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="Buy me a coffee">
+                            <span>☕</span>
+                            <span>Buy me a coffee</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -294,26 +243,27 @@
             duration: 800,
             once: true
         });
-        
+
         // Initialize Feather Icons
         feather.replace();
-        
+
         // Initialize LazyLoad
         var lazyLoadInstance = new LazyLoad({
             elements_selector: ".lazyload",
             threshold: 100
         });
-        
+
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', function() {
+
+        mobileMenuButton.addEventListener('click', function () {
             mobileMenu.classList.toggle('hidden');
         });
-        
+
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>
