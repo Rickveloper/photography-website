@@ -4,9 +4,8 @@ emoji: 🐳
 colorFrom: red
 colorTo: yellow
 sdk: static
-pinned: false
+pinned:
 tags:
-  - deepsite
 ---
 
 Fryou Photography — Static site with self-hosted Strapi CMS

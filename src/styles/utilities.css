@@ -1,3 +1,4 @@
 /* Offscreen sections don’t waste main-thread time */
 .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
 
+
