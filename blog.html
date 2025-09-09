@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal | Fryou Photography</title>
+    <link rel="stylesheet" href="src/css/style.css">
     <meta name="description"
         content="Thoughts, stories, and behind-the-scenes from coastal Maine landscape photography.">
 
@@ -14,7 +15,7 @@
         content="Thoughts, stories, and behind-the-scenes from coastal Maine landscape photography.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="blog.html">
-    <meta property="og:image" content="assets/hero.jpg">
+    <meta property="og:image" content="public/images/hero/hero.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Favicon -->
@@ -57,14 +58,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.min.js"></script>
-    <script src="assets/js/lazy-observer.js" defer></script>
     <script>
         // Production CMS endpoint. Include port if not reverse-proxied.
         window.CMS_BASE = "http://YOUR_SERVER_OR_DOMAIN:1337";
     </script>
-    <script src="assets/js/cms.js" defer></script>
+
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
@@ -264,6 +263,9 @@
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    <script src="src/js/lazy-observer.js" type="module"></script>
+    <script src="src/js/cms.js" type="module"></script>
+
 </body>
 
 </html>

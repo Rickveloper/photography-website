@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fryou Photography | Coastal Maine Landscape Photography</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/styles/utilities.css">
     <meta name="description"
         content="Dark landscapes from the edge of the Atlantic. Coastal Maine photography capturing four brutal, beautiful seasons.">
 
@@ -14,12 +16,13 @@
         content="Dark landscapes from the edge of the Atlantic. Coastal Maine photography capturing four brutal, beautiful seasons.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rickfryou.com">
-    <meta property="og:image" content="assets/hero.jpg">
+    <meta property="og:image" content="public/images/hero/hero.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <!-- Favicon -->
 
-    <link rel="preload" as="image" href="assets/hero.jpg" imagesrcset="assets/hero.jpg 1600w, assets/hero-01.jpg 1200w"
-        imagesizes="100vw">
+    <link rel="preload" as="image" href="/images/hero/hero.webp"
+  imagesrcset="/images/hero/hero-960.webp 960w, /images/hero/hero-1440.webp 1440w, /images/hero/hero-1920.webp 1920w"
+  imagesizes="(min-width: 1024px) 90vw, 100vw" type="image/webp">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
@@ -75,12 +78,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.min.js"></script>
-    <script src="assets/js/lazy-observer.js" defer></script>
+
     <script>
         // Production CMS endpoint. Include port if not reverse-proxied.
         window.CMS_BASE = "http://YOUR_SERVER_OR_DOMAIN:1337";
     </script>
-    <script src="assets/js/cms.js" defer></script>
+
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -208,9 +211,11 @@
         <div class="absolute inset-0 bg-black/60 z-0"></div>
 
         <picture class="absolute inset-0">
-            <source srcset="assets/hero.jpg 1600w, assets/hero-01.jpg 1200w" type="image/jpeg" sizes="100vw">
-            <img src="assets/hero.jpg" alt="Coastal Maine shoreline at dawn" class="w-full h-full object-cover fade-in"
-                width="1600" height="900" fetchpriority="high" decoding="async">
+            <source type="image/webp" srcset="/images/hero/hero-960.webp 960w, /images/hero/hero-1440.webp 1440w, /images/hero/hero-1920.webp 1920w" sizes="(min-width: 1024px) 90vw, 100vw">
+            <source srcset="/images/hero/hero-960.jpg 960w, /images/hero/hero-1440.jpg 1440w, /images/hero/hero-1920.jpg 1920w" type="image/jpeg" sizes="(min-width: 1024px) 90vw, 100vw">
+            <img src="/images/hero/hero.jpg" alt="Coastal Maine shoreline at dawn"
+                class="w-full h-full object-cover fade-in" width="1920" height="1280" loading="eager" fetchpriority="high"
+                decoding="async" style="background:#e6e6e6">
         </picture>
         <div class="relative z-10 text-center px-6 max-w-4xl mx-auto" data-aos="fade-in">
             <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Coastal Maine • Four Seasons</h1>
@@ -261,14 +266,14 @@
                 <div class="portfolio-item winter" data-aos="fade-up" data-category="winter">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/winter-1.jpg" alt="Snowy shoreline in winter"
+                            <img src="public/images/portfolio/winter-1.jpg" alt="Snowy shoreline in winter"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                             oncontextmenu="return false">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                data-image="assets/portfolio/winter-1.jpg" data-title="Winter scene"
+                                data-image="public/images/portfolio/winter-1.jpg" data-title="Winter scene"
                                 data-exif="Placeholder EXIF">
                                 View Details
                             </button>
@@ -279,14 +284,14 @@
                 <div class="portfolio-item spring" data-aos="fade-up" data-category="spring">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/spring-1.jpg" alt="Coastal meadow in spring"
+                            <img src="public/images/portfolio/spring-1.jpg" alt="Coastal meadow in spring"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                             oncontextmenu="return false">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                data-image="assets/portfolio/spring-1.jpg" data-title="Spring scene"
+                                data-image="public/images/portfolio/spring-1.jpg" data-title="Spring scene"
                                 data-exif="Placeholder EXIF">
                                 View Details
                             </button>
@@ -297,14 +302,14 @@
                 <div class="portfolio-item summer" data-aos="fade-up" data-category="summer">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/summer-1.jpg" alt="Rocky coast under summer light"
+                            <img src="public/images/portfolio/summer-1.jpg" alt="Rocky coast under summer light"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                             oncontextmenu="return false">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                data-image="assets/portfolio/summer-1.jpg" data-title="Summer scene"
+                                data-image="public/images/portfolio/summer-1.jpg" data-title="Summer scene"
                                 data-exif="Placeholder EXIF">
                                 View Details
                             </button>
@@ -315,14 +320,14 @@
                 <div class="portfolio-item fall" data-aos="fade-up" data-category="fall">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/fall-1.jpg" alt="Autumn foliage along the coast"
+                            <img src="public/images/portfolio/fall-1.jpg" alt="Autumn foliage along the coast"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                             oncontextmenu="return false">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                data-image="assets/portfolio/fall-1.jpg" data-title="Fall scene"
+                                data-image="public/images/portfolio/fall-1.jpg" data-title="Fall scene"
                                 data-exif="Placeholder EXIF">
                                 View Details
                             </button>
@@ -333,14 +338,14 @@
                 <div class="portfolio-item ocean" data-aos="fade-up" data-category="ocean">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/ocean-1.jpg" alt="Ocean waves on granite"
+                            <img src="public/images/portfolio/ocean-1.jpg" alt="Ocean waves on granite"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                             oncontextmenu="return false">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                data-image="assets/portfolio/ocean-1.jpg" data-title="Ocean scene"
+                                data-image="public/images/portfolio/ocean-1.jpg" data-title="Ocean scene"
                                 data-exif="Placeholder EXIF">
                                 View Details
                             </button>
@@ -351,14 +356,14 @@
                 <div class="portfolio-item winter" data-aos="fade-up" data-category="winter">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/winter-2.jpg" alt="Snow-dusted pines in winter"
+                            <img src="public/images/portfolio/winter-2.jpg" alt="Snow-dusted pines in winter"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div
                             class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                oncontextmenu="return false" data-image="assets/portfolio/winter-2.jpg"
+                                oncontextmenu="return false" data-image="public/images/portfolio/winter-2.jpg"
                                 data-title="Winter 2" data-exif="Placeholder EXIF">View Details</button>
                         </div>
                     </div>
@@ -366,14 +371,14 @@
                 <div class="portfolio-item spring" data-aos="fade-up" data-category="spring">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/spring-2.jpg" alt="Spring greenery by the shore"
+                            <img src="public/images/portfolio/spring-2.jpg" alt="Spring greenery by the shore"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div
                             class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                oncontextmenu="return false" data-image="assets/portfolio/spring-2.jpg"
+                                oncontextmenu="return false" data-image="public/images/portfolio/spring-2.jpg"
                                 data-title="Spring 2" data-exif="Placeholder EXIF">View Details</button>
                         </div>
                     </div>
@@ -381,14 +386,14 @@
                 <div class="portfolio-item summer" data-aos="fade-up" data-category="summer">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/summer-2.jpg" alt="Warm sunset over rocks"
+                            <img src="public/images/portfolio/summer-2.jpg" alt="Warm sunset over rocks"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div
                             class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                oncontextmenu="return false" data-image="assets/portfolio/summer-2.jpg"
+                                oncontextmenu="return false" data-image="public/images/portfolio/summer-2.jpg"
                                 data-title="Summer 2" data-exif="Placeholder EXIF">View Details</button>
                         </div>
                     </div>
@@ -396,14 +401,14 @@
                 <div class="portfolio-item fall" data-aos="fade-up" data-category="fall">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/fall-2.jpg" alt="Golden leaves in autumn"
+                            <img src="public/images/portfolio/fall-2.jpg" alt="Golden leaves in autumn"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div
                             class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                oncontextmenu="return false" data-image="assets/portfolio/fall-2.jpg"
+                                oncontextmenu="return false" data-image="public/images/portfolio/fall-2.jpg"
                                 data-title="Fall 2" data-exif="Placeholder EXIF">View Details</button>
                         </div>
                     </div>
@@ -411,14 +416,14 @@
                 <div class="portfolio-item ocean" data-aos="fade-up" data-category="ocean">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
-                            <img src="assets/portfolio/ocean-2.jpg" alt="Breaking wave and sea spray"
+                            <img src="public/images/portfolio/ocean-2.jpg" alt="Breaking wave and sea spray"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div
                             class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
-                                oncontextmenu="return false" data-image="assets/portfolio/ocean-2.jpg"
+                                oncontextmenu="return false" data-image="public/images/portfolio/ocean-2.jpg"
                                 data-title="Ocean 2" data-exif="Placeholder EXIF">View Details</button>
                         </div>
                     </div>
@@ -431,7 +436,7 @@
                     <i data-feather="x"></i>
                 </button>
                 <div class="max-w-4xl w-full">
-                    <img src="" alt="" class="w-full h-auto max-h-[80vh] object-contain" id="lightbox-image">
+                    <img src="" alt="" class="w-full h-auto max-h-[80vh] object-contain" id="lightbox-image" loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 50vw">
                     <div class="mt-6 text-white">
                         <h3 class="text-2xl font-bold" id="lightbox-title"></h3>
                         <div id="lightbox-exif" class="mt-4 bg-dark-800/50 p-4 rounded-sm">
@@ -490,8 +495,9 @@
                             <div
                                 class="relative overflow-hidden rounded-full w-48 h-48 mx-auto md:mx-0 border-4 border-ocean-600">
                                 <picture>
-                                    <img src="assets/rf-winter-01.jpg" alt="Portrait placeholder for Rich Fryou"
-                                        class="w-full h-full object-cover" loading="lazy">
+                                    <img src="public/images/featured/rf-winter-01.jpg"
+                                        alt="Portrait placeholder for Rich Fryou" class="w-full h-full object-cover"
+                                        loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 50vw">
                                 </picture>
                             </div>
                         </div>
@@ -773,6 +779,8 @@
                     window.CMS.hydrateLatestOnIndex(3);
                 }
             </script>
+            <script src="src/js/lazy-observer.js" type="module"></script>
+            <script src="src/js/cms.js" type="module"></script>
 
 
 </body>

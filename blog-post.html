@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chasing Winter Storms | Fryou Photography</title>
+    <link rel="stylesheet" href="src/css/style.css">
     <meta name="description"
         content="Braving sub-zero temperatures to capture the raw power of nor'easters along the Maine coast.">
 
@@ -14,7 +15,7 @@
         content="Braving sub-zero temperatures to capture the raw power of nor'easters along the Maine coast.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="blog-post.html">
-    <meta property="og:image" content="assets/portfolio/winter-1.jpg">
+    <meta property="og:image" content="public/images/portfolio/winter-1.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="article:published_time" content="2023-01-15">
     <meta property="article:author" content="Rich Fryou">
@@ -34,7 +35,7 @@
             "url": "index.html"
         },
         "datePublished": "2023-01-15",
-        "image": "https://rickfryou.com/assets/blog/winter-storm.jpg"
+        "image": "https://rickfryou.com/public/images/portfolio/winter-1.jpg"
     }
     </script>
 
@@ -84,7 +85,7 @@
         // Production CMS endpoint. Include port if not reverse-proxied.
         window.CMS_BASE = "http://YOUR_SERVER_OR_DOMAIN:1337";
     </script>
-    <script src="assets/js/cms.js" defer></script>
+
 
     <style>
         html {
@@ -191,9 +192,9 @@
                     <a href="blog-post.html"
                         class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover">
                         <picture>
-                            <img src="assets/portfolio/winter-2.jpg" alt="Ice Formations"
+                            <img src="public/images/portfolio/winter-2.jpg" alt="Ice Formations"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div class="p-6">
                             <h4 class="text-lg font-bold mb-2 text-white">Abstract Ice Formations</h4>
@@ -206,9 +207,9 @@
                     <a href="blog-post.html"
                         class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover">
                         <picture>
-                            <img src="assets/portfolio/summer-1.jpg" alt="Photography Gear"
+                            <img src="public/images/portfolio/summer-1.jpg" alt="Photography Gear"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
                         </picture>
                         <div class="p-6">
                             <h4 class="text-lg font-bold mb-2 text-white">Coastal Photography Gear Essentials</h4>
@@ -303,6 +304,9 @@
             window.CMS.hydratePostBySlug();
         }
     </script>
+    <script src="src/js/lazy-observer.js" type="module"></script>
+    <script src="src/js/cms.js" type="module"></script>
+
 </body>
 
 </html>
