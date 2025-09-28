@@ -48,8 +48,8 @@
             <div class="p-6 flex flex-col flex-1">
               <h3 class="text-xl font-bold mb-2 text-white">${a.title || ''}</h3>
               <p class="text-gray-300 mb-4">${date}</p>
-              <p class="text-gray-400">${a.excerpt || ''}</p>
-              <div class="mt-auto pt-4 text-ocean-400 flex items-center">Read More <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></div>
+              <p class="text-gray-300">${a.excerpt || ''}</p>
+              <div class="mt-auto pt-4 text-ocean-300 flex items-center">Read More <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></div>
             </div>
           </a>`;
             }).join('');

@@ -144,6 +144,9 @@
 </head>
 
 <body class="min-h-screen">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+
     <!-- Header -->
     <header class="fixed w-full z-50 bg-dark-900 shadow-lg">
         <div class="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
@@ -155,11 +158,11 @@
                 </svg>
             </a>
             <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
-                <a href="index.html" class="text-gray-300 hover:text-white transition">Home</a>
-                <a href="blog.html" class="text-ocean-400 hover:text-white transition">Blog</a>
-                <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
-                <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
-                <a href="shop.html" class="text-gray-300 hover:text-white transition">Shop</a>
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link text-ocean-400 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html" class="nav-link nav-shop-btn text-gray-300 hover:text-white transition">Shop</a>
             </nav>
             <button class="md:hidden focus:outline-none justify-self-end" id="mobile-menu-button"
                 aria-label="Open menu">
@@ -169,18 +172,18 @@
         <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
             <div class="flex flex-col space-y-4 items-center text-center">
-                <a href="index.html" class="text-gray-300 hover:text-white transition">Home</a>
-                <a href="blog.html" class="text-ocean-400 hover:text-white transition">Blog</a>
-                <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
-                <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link text-ocean-400 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
                 <a href="shop.html"
-                    class="block px-4 py-3 text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+                    class="nav-link nav-shop-btn block text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="pt-28 pb-16">
+    <main id="main-content" class="pt-28 pb-16">
         <div class="container mx-auto px-6 max-w-[1120px]">
             <!-- CMS-rendered post -->
             <div id="blog-post" class="max-w-4xl mx-auto"></div>
@@ -262,9 +265,11 @@
                     <p>Built by <a href="https://github.com/rickveloper"
                             class="text-ocean-400 hover:underline">Rickveloper</a></p>
                     <div class="mt-4">
-                        <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee!&emoji=☕&slug=Rickveloper&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
-                                alt="Buy me a coffee button">
+                        <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-sm bg-ocean-700 text-white border border-ocean-500 hover:bg-ocean-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="Buy me a coffee">
+                            <span>☕</span>
+                            <span>Buy me a coffee</span>
                         </a>
                     </div>
                 </div>

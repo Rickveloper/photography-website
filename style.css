@@ -1,6 +1,19 @@
 body {
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Ensure no gray borders on hero sections */
+* {
+  box-sizing: border-box;
+}
+
+.hero-section,
+.hero-section * {
+  border: none !important;
+  outline: none !important;
 }
 
 h1 {
@@ -50,6 +63,43 @@ body.min-h-screen {
 }
 
 /* Hero: full-viewport image and readable text */
+.hero-section {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.hero-picture {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .film-grain picture,
 .film-grain picture>img {
   position: absolute;

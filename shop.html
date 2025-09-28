@@ -19,6 +19,9 @@
 </head>
 
 <body class="min-h-screen bg-dark-900 text-gray-100">
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+
   <header class="fixed w-full z-50 bg-dark-900 shadow-lg">
     <div class="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
       <a href="index.html" class="text-2xl font-bold tracking-tight text-white whitespace-nowrap justify-self-start">
@@ -28,12 +31,12 @@
         </svg>
       </a>
       <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
-        <a href="index.html" class="text-gray-300 hover:text-white transition">Home</a>
-        <a href="blog.html" class="text-gray-300 hover:text-white transition">Blog</a>
-        <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
-        <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
+        <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+        <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
+        <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+        <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
         <a href="shop.html"
-          class="px-4 py-2 text-sm md:text-base text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+          class="nav-link nav-shop-btn text-sm md:text-base text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
       </nav>
       <button class="md:hidden focus:outline-none justify-self-end" id="mobile-menu-button" aria-label="Open menu">
         <i data-feather="menu" class="text-white"></i>
@@ -41,16 +44,17 @@
     </div>
     <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
       <div class="flex flex-col space-y-4 items-center text-center">
-        <a href="index.html" class="text-gray-300 hover:text-white transition">Home</a>
-        <a href="blog.html" class="text-gray-300 hover:text-white transition">Blog</a>
-        <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
-        <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
-        <a href="shop.html" class="block px-4 py-3 text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+        <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+        <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
+        <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+        <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+        <a href="shop.html"
+          class="nav-link nav-shop-btn block text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
       </div>
     </div>
   </header>
 
-  <main class="pt-28 pb-16">
+  <main id="main-content" class="pt-28 pb-16">
     <section class="min-h-[60vh] flex items-center">
       <div class="container mx-auto px-6 text-center max-w-2xl">
         <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white">Shop — Coming Soon</h1>
@@ -58,7 +62,7 @@
           launch here.</p>
         <div class="mt-8">
           <a href="index.html"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-ocean-600 text-white hover:bg-ocean-700 transition rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500">
+            class="inline-flex items-center gap-2 px-6 py-3 btn-gradient text-white transition rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500">
             <i data-feather="arrow-left" class="w-4 h-4"></i> Back to Home
           </a>
         </div>
@@ -112,10 +116,11 @@
           <p>Built by <a href="https://github.com/rickveloper" class="text-ocean-400 hover:underline">Rickveloper</a>
           </p>
           <div class="mt-4">
-            <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee!&emoji=☕&slug=Rickveloper&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
-                alt="Buy me a coffee button">
+            <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-sm bg-ocean-700 text-white border border-ocean-500 hover:bg-ocean-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+              aria-label="Buy me a coffee">
+              <span>☕</span>
+              <span>Buy me a coffee</span>
             </a>
           </div>
         </div>
@@ -133,6 +138,7 @@
   </script>
   <script src="src/js/lazy-observer.js" type="module"></script>
   <script src="src/js/cms.js" type="module"></script>
+  <script src="src/js/accessibility.js"></script>
 
 </body>
 

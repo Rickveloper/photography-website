@@ -93,7 +93,7 @@
         }
 
         .prose a {
-            @apply text-ocean-400 hover:underline;
+            @apply text-ocean-300 hover:underline;
         }
 
         .prose blockquote {
@@ -105,7 +105,7 @@
         }
 
         .prose li {
-            @apply text-gray-400 mb-2;
+            @apply text-gray-300 mb-2;
         }
 
         .image-hover {
@@ -120,6 +120,9 @@
 </head>
 
 <body class="min-h-screen">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+
     <!-- Header -->
     <header class="fixed w-full z-50 bg-dark-900 shadow-lg">
         <div class="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
@@ -131,11 +134,11 @@
                 </svg>
             </a>
             <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
-                <a href="index.html" class="text-gray-300 hover:text-white transition">Home</a>
-                <a href="blog.html" class="text-ocean-400 hover:text-white transition">Blog</a>
-                <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
-                <a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a>
-                <a href="shop.html" class="text-gray-300 hover:text-white transition">Shop</a>
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link text-ocean-400 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html" class="nav-link nav-shop-btn text-gray-300 hover:text-white transition">Shop</a>
             </nav>
             <button class="md:hidden focus:outline-none justify-self-end" id="mobile-menu-button"
                 aria-label="Open menu">
@@ -143,32 +146,82 @@
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-dark-800 w-full py-3 px-6" id="mobile-menu">
+        <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
             <div class="flex flex-col space-y-2 items-center text-center">
-                <a href="index.html" class="block px-4 py-2 text-gray-300 hover:text-white transition">Home</a>
-                <a href="blog.html" class="block px-4 py-2 text-ocean-400 hover:text-white transition">Blog</a>
-                <a href="about.html" class="block px-4 py-2 text-gray-300 hover:text-white transition">About</a>
-                <a href="contact.html" class="block px-4 py-2 text-gray-300 hover:text-white transition">Contact</a>
+                <a href="index.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link block px-4 py-2 text-ocean-400 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Contact</a>
                 <a href="shop.html"
-                    class="block px-4 py-2 text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+                    class="nav-link nav-shop-btn block text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="pt-28 pb-16">
+    <main id="main-content" class="pt-28 pb-16">
         <div class="container mx-auto px-6 max-w-[1120px]">
             <!-- Blog Header -->
             <div class="text-center mb-16" data-aos="fade-up">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">The Journal</h1>
-                <div class="w-20 h-1 bg-ocean-500 mx-auto"></div>
+                <div class="w-20 h-1 gradient-ocean mx-auto rounded-full"></div>
                 <p class="text-xl text-gray-300 mt-6 max-w-2xl mx-auto">
                     Thoughts, stories, and behind-the-scenes from coastal Maine landscape photography.
                 </p>
             </div>
 
             <!-- Blog Grid -->
-            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12 items-stretch cv-auto">
+            <div id="blog-grid"
+                class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12 items-stretch cv-auto blog-grid">
+                <!-- Loading skeletons -->
+                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                    <div class="loading-skeleton-image"></div>
+                    <div class="p-6">
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                    </div>
+                </div>
+                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                    <div class="loading-skeleton-image"></div>
+                    <div class="p-6">
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                    </div>
+                </div>
+                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                    <div class="loading-skeleton-image"></div>
+                    <div class="p-6">
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                    </div>
+                </div>
+                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                    <div class="loading-skeleton-image"></div>
+                    <div class="p-6">
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                    </div>
+                </div>
+                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                    <div class="loading-skeleton-image"></div>
+                    <div class="p-6">
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                    </div>
+                </div>
+                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                    <div class="loading-skeleton-image"></div>
+                    <div class="p-6">
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <div class="loading-skeleton loading-skeleton-text"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- Pagination -->
@@ -176,7 +229,7 @@
                 <nav class="flex items-center space-x-2">
                     <a href="#" aria-label="Previous page"
                         class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">&laquo;</a>
-                    <a href="#" class="px-4 py-2 bg-ocean-600 text-white rounded-sm" aria-current="page">1</a>
+                    <a href="#" class="px-4 py-2 btn-gradient text-white rounded-sm" aria-current="page">1</a>
                     <a href="#" aria-label="Page 2"
                         class="px-4 py-2 bg-dark-700 text-gray-300 rounded-sm hover:bg-ocean-600 hover:text-white transition">2</a>
                     <a href="#" aria-label="Page 3"
@@ -189,7 +242,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-20 border-t border-white/10 py-12 text-gray-400 text-sm break-normal">
+    <footer class="mt-20 border-t border-white/10 py-12 text-gray-300 text-sm break-normal">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
                 <div class="mb-6 md:mb-0 text-center md:text-left">
@@ -200,17 +253,17 @@
                 <div class="flex flex-col items-center text-center">
                     <div class="flex items-center gap-8">
                         <a href="https://www.instagram.com/fryouphotography/" target="_blank" rel="noopener noreferrer"
-                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
                             aria-label="Instagram">
                             <i data-feather="instagram" class="w-5 h-5"></i>
                         </a>
                         <a href="shop.html"
-                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
                             title="Shop" aria-label="Shop">
                             <i data-feather="shopping-cart" class="w-5 h-5"></i>
                         </a>
                         <a href="rss.xml"
-                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
                             title="RSS Feed" aria-label="RSS Feed">
                             <i data-feather="rss" class="w-5 h-5"></i>
                         </a>
@@ -224,7 +277,7 @@
                             class="text-ocean-400 hover:underline">Rickveloper</a></p>
                     <div class="mt-4 flex justify-center">
                         <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-sm bg-[#FFDD00] text-black hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-sm bg-ocean-700 text-white border border-ocean-500 hover:bg-ocean-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
                             aria-label="Buy me a coffee">
                             <span>☕</span>
                             <span>Buy me a coffee</span>
@@ -265,6 +318,7 @@
     </script>
     <script src="src/js/lazy-observer.js" type="module"></script>
     <script src="src/js/cms.js" type="module"></script>
+    <script src="src/js/accessibility.js"></script>
 
 </body>
 
