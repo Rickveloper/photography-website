@@ -20,9 +20,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <!-- Favicon -->
 
+    <!-- Preload critical hero image for LCP optimization -->
     <link rel="preload" as="image" href="public/images/hero/hero.webp"
   imagesrcset="public/images/hero/hero-960.webp 960w, public/images/hero/hero-1440.webp 1440w, public/images/hero/hero-1920.webp 1920w"
   imagesizes="(min-width: 1024px) 90vw, 100vw" type="image/webp">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
@@ -167,6 +177,29 @@
             content-visibility: auto;
             contain-intrinsic-size: 1px 1000px;
         }
+
+        /* Critical CSS for performance - inline for faster loading */
+        .hero-section {
+            contain: layout style paint;
+            will-change: transform;
+        }
+        
+        .parallax-bg {
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+        }
+        
+        /* Optimize font loading */
+        body {
+            font-display: swap;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* Prevent layout shift */
+        img {
+            height: auto;
+            transform: translateZ(0);
+        }
     </style>
 </head>
 
@@ -186,6 +219,7 @@
             </a>
             <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
                 <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link text-gray-300 hover:text-white transition">Gallery</a>
                 <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
                 <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
                 <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
@@ -200,6 +234,7 @@
         <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
             <div class="flex flex-col space-y-2 items-center text-center">
                 <a href="index.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Gallery</a>
                 <a href="blog.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Blog</a>
                 <a href="about.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">About</a>
                 <a href="contact.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Contact</a>
@@ -209,17 +244,24 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="main-content" class="hero-section relative overflow-hidden film-grain cv-auto">
+    <!-- Hero Section - Enhanced with parallax and proper image handling -->
+    <section id="main-content" class="hero-section relative overflow-hidden film-grain cv-auto parallax-container">
+        <!-- Dark overlay for text readability -->
         <div class="absolute inset-0 bg-black/60 z-0"></div>
+        
+        <!-- Enhanced parallax background layer -->
+        <div class="parallax-bg parallax-scroll"></div>
 
+        <!-- Fixed: Proper hero image with object-fit: cover -->
         <picture class="hero-picture absolute inset-0">
             <source type="image/webp" srcset="public/images/hero/hero-960.webp 960w, public/images/hero/hero-1440.webp 1440w, public/images/hero/hero-1920.webp 1920w" sizes="100vw">
             <source srcset="public/images/hero/hero-960.jpg 960w, public/images/hero/hero-1440.jpg 1440w, public/images/hero/hero-1920.jpg 1920w" type="image/jpeg" sizes="100vw">
             <img src="public/images/hero/hero.jpg" alt="Coastal Maine shoreline at dawn"
-                class="hero-image fade-in" width="1920" height="1280" loading="eager" fetchpriority="high"
+                class="hero-image parallax-scroll fade-in" width="1920" height="1280" loading="eager" fetchpriority="high"
                 decoding="async" style="background:#e6e6e6">
         </picture>
+        
+        <!-- Hero content -->
         <div class="relative z-10 text-center px-6 max-w-4xl mx-auto" data-aos="fade-in">
             <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Coastal Maine • Four Seasons</h1>
             <p class="text-xl md:text-2xl text-gray-200 mb-8">Dark landscapes from the edge of the Atlantic.</p>
@@ -228,6 +270,8 @@
                 View Portfolio
             </a>
         </div>
+        
+        <!-- Scroll indicator -->
         <div class="absolute bottom-10 left-0 right-0 text-center z-10">
             <a href="#portfolio" class="inline-block animate-float" aria-label="Scroll to portfolio">
                 <i data-feather="chevron-down" class="text-white w-10 h-10"></i>
@@ -235,15 +279,20 @@
         </div>
     </section>
 
+    <!-- Smooth gradient transition to prevent black void -->
+    <div class="hero-gradient-transition"></div>
+
     <!-- Portfolio Section -->
+    <!-- TODO: Replace with Strapi CMS portfolio images -->
+    <!-- CMS Integration Point: Portfolio images will be fetched from /api/portfolio-items?_sort=order:ASC -->
     <section id="portfolio" class="py-16 md:py-24 bg-dark-900 cv-auto">
         <div class="container mx-auto px-6 max-w-[1120px]">
-            <div class="text-center mb-16" data-aos="fade-up">
+            <div class="text-center mb-16 slide-in" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Portfolio</h2>
                 <div class="w-20 h-1 gradient-ocean mx-auto rounded-full"></div>
             </div>
             <!-- Filter Tabs -->
-            <div class="flex flex-wrap justify-center mb-12 gap-2" data-aos="fade-up">
+            <div class="flex flex-wrap justify-center mb-12 gap-2 slide-in" data-aos="fade-up">
                 <button
                     class="px-4 py-2 btn-gradient text-white transition rounded-sm filter-btn active"
                     data-filter="all">All Seasons</button>
@@ -269,9 +318,11 @@
                 <div class="portfolio-item winter" data-aos="fade-up" data-category="winter">
                     <div class="relative overflow-hidden rounded-sm image-hover">
                         <picture>
+                            <source type="image/webp" srcset="public/images/portfolio/winter-1.webp" media="(min-width: 768px)">
                             <img src="public/images/portfolio/winter-1.jpg" alt="Snowy shoreline in winter"
                                 class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
-                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw"
+                                fetchpriority="low">
                         </picture>
                         <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                             oncontextmenu="return false">
@@ -471,9 +522,11 @@
             </div>
 
             <!-- Blog Preview Section -->
+            <!-- TODO: Replace with Strapi CMS latest blog posts -->
+            <!-- CMS Integration Point: Latest posts will be fetched from /api/posts?_limit=3&_sort=publishedAt:DESC -->
             <section id="blog" class="py-16 md:py-24 bg-dark-800">
                 <div class="container mx-auto px-6 max-w-[1120px]">
-                    <div data-aos="fade-up">
+                    <div data-aos="fade-up" class="scale-in">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">From The Journal</h2>
                         <div class="w-20 h-1 gradient-ocean rounded-full"></div>
                     </div>
@@ -506,7 +559,7 @@
                         </div>
                     </div>
 
-                    <div class="text-center mt-12" data-aos="fade-up">
+                    <div class="text-center mt-12 scale-in" data-aos="fade-up">
                         <a href="blog.html"
                             class="inline-block px-6 py-3 btn-gradient text-white transition rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500">
                             View All Posts
@@ -516,6 +569,8 @@
             </section>
 
             <!-- About Section -->
+            <!-- TODO: Replace with Strapi CMS about content -->
+            <!-- CMS Integration Point: About content will be fetched from /api/about endpoint -->
             <section id="about" class="py-16 md:py-24 bg-dark-900">
                 <div class="container mx-auto px-6 max-w-[1120px]">
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
@@ -552,6 +607,8 @@
             </section>
 
             <!-- Contact Section -->
+            <!-- TODO: Replace with Strapi CMS contact form integration -->
+            <!-- CMS Integration Point: Contact form submissions will be handled by Strapi backend -->
             <section id="contact" class="py-16 md:py-24 bg-dark-800">
                 <div class="container mx-auto px-6 max-w-[1120px]">
                     <div data-aos="fade-up" class="text-center">
@@ -802,11 +859,47 @@
                 // Set current year in footer
                 document.getElementById('year').textContent = new Date().getFullYear();
 
+                // TODO: CMS Integration Points for Strapi
+                /*
+                 * STRAPI CMS INTEGRATION GUIDE:
+                 * 
+                 * 1. Portfolio Images:
+                 *    - Endpoint: /api/portfolio-items?_sort=order:ASC
+                 *    - Fields: title, image, category, exif_data, order
+                 *    - Replace static portfolio grid with dynamic content
+                 * 
+                 * 2. Blog Posts:
+                 *    - Endpoint: /api/posts?_limit=3&_sort=publishedAt:DESC
+                 *    - Fields: title, excerpt, featured_image, publishedAt, slug
+                 *    - Replace loading skeletons with real content
+                 * 
+                 * 3. About Content:
+                 *    - Endpoint: /api/about
+                 *    - Fields: bio_blocks, portrait_image, equipment_list
+                 *    - Replace static about section with dynamic content
+                 * 
+                 * 4. Contact Form:
+                 *    - Endpoint: /api/contact-submissions (POST)
+                 *    - Handle form submissions through Strapi backend
+                 * 
+                 * 5. Shop Products:
+                 *    - Endpoint: /api/products?_sort=featured:DESC
+                 *    - Fields: title, description, images, price, category, status
+                 *    - Replace placeholder products with real inventory
+                 * 
+                 * Implementation:
+                 * - Use fetch() or axios for API calls
+                 * - Add loading states and error handling
+                 * - Implement caching for better performance
+                 * - Add form validation and submission handling
+                 */
+                
                 // Hydrate latest posts from CMS
                 if (window.CMS && window.CMS.hydrateLatestOnIndex) {
                     window.CMS.hydrateLatestOnIndex(3);
                 }
             </script>
+    <script src="src/js/performance.js"></script>
     <script src="src/js/lazy-observer.js" type="module"></script>
     <script src="src/js/cms.js" type="module"></script>
     <script src="src/js/accessibility.js"></script>

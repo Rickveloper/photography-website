@@ -28,6 +28,7 @@
             </a>
             <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
                 <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link text-gray-300 hover:text-white transition">Gallery</a>
                 <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
                 <a href="about.html" class="nav-link text-ocean-400 hover:text-white transition">About</a>
                 <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
@@ -42,6 +43,7 @@
         <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
             <div class="flex flex-col space-y-4 items-center text-center">
                 <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link text-gray-300 hover:text-white transition">Gallery</a>
                 <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
                 <a href="about.html" class="nav-link text-ocean-400 hover:text-white transition">About</a>
                 <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
@@ -53,9 +55,93 @@
 
     <main id="main-content" class="pt-28 pb-16">
         <div class="container mx-auto px-6 max-w-[900px]">
-            <h1 class="text-4xl md:text-5xl font-bold text-white">About Rich</h1>
-            <p class="mt-6 text-gray-300">Coastal Maine landscape photographer focused on the Atlantic's changing moods.
-                Primary camera: Sony a6300.</p>
+            <!-- TODO: Replace with Strapi CMS about content -->
+            <!-- CMS Integration Point: About content will be fetched from /api/about endpoint -->
+            
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-12 mb-16 slide-in" data-aos="fade-up">
+                <!-- Portrait placeholder -->
+                <div class="md:w-1/3 mb-8 md:mb-0" data-aos="fade-right">
+                    <div class="relative overflow-hidden rounded-full w-48 h-48 mx-auto md:mx-0 border-4 border-ocean-600 image-hover">
+                        <img src="public/images/featured/rf-winter-01.jpg" 
+                            alt="Rich Fryou portrait" 
+                            class="w-full h-full object-cover" 
+                            loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- Bio content -->
+                <div class="md:w-2/3 md:pl-12" data-aos="fade-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">About Rich</h1>
+                    
+                    <!-- Bio Block 1 -->
+                    <div class="bg-dark-800 rounded-sm p-6 mb-6 slide-in" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-white mb-4">The Photographer</h2>
+                        <p class="text-gray-300 mb-4">
+                            Landscape photography from coastal Maine—fog, nor'easters, and four brutal, beautiful seasons. 
+                            Based in York, Maine, Rich has spent over a decade documenting the ever-changing moods of the Atlantic coastline.
+                        </p>
+                        <p class="text-gray-300">
+                            His work focuses on the intersection of natural forces and human presence in these marginal spaces, 
+                            where the ocean meets the granite, and where weather becomes the primary subject.
+                        </p>
+                    </div>
+                    
+                    <!-- Bio Block 2 -->
+                    <div class="bg-dark-700 rounded-sm p-6 mb-6 slide-in" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-white mb-4">The Process</h2>
+                        <p class="text-gray-300 mb-4">
+                            Using primarily a Sony a6300, Rich's photographic approach combines technical precision with an 
+                            intuitive response to weather and light conditions. Each image is a collaboration between photographer 
+                            and environment, often requiring hours of waiting for the right moment.
+                        </p>
+                        <p class="text-gray-300">
+                            The work emphasizes patience, persistence, and a deep respect for the power and unpredictability 
+                            of the Atlantic coast. Every photograph tells a story of time, weather, and place.
+                        </p>
+                    </div>
+                    
+                    <!-- Bio Block 3 -->
+                    <div class="bg-dark-800 rounded-sm p-6 slide-in" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-white mb-4">The Mission</h2>
+                        <p class="text-gray-300 mb-4">
+                            Through his photography, Rich seeks to capture not just the visual beauty of coastal Maine, 
+                            but the emotional and physical experience of being present in these dramatic landscapes.
+                        </p>
+                        <p class="text-gray-300">
+                            The goal is to share the raw power and subtle beauty of the Atlantic coast, creating images 
+                            that resonate with both locals who know these places intimately and visitors who are 
+                            experiencing them for the first time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Equipment & Approach Section -->
+            <section class="bg-dark-800 rounded-sm p-8 slide-in" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-6 text-center">Equipment & Approach</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">Primary Gear</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li class="flex items-center"><i data-feather="camera" class="w-5 h-5 mr-2 text-ocean-300"></i> Sony a6300</li>
+                            <li class="flex items-center"><i data-feather="maximize" class="w-5 h-5 mr-2 text-ocean-300"></i> 24-70mm f/2.8 GM</li>
+                            <li class="flex items-center"><i data-feather="aperture" class="w-5 h-5 mr-2 text-ocean-300"></i> 16-35mm f/4 G</li>
+                            <li class="flex items-center"><i data-feather="clock" class="w-5 h-5 mr-2 text-ocean-300"></i> Gitzo Carbon Tripod</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">Philosophy</h3>
+                        <p class="text-gray-300 mb-4">
+                            "The best camera is the one you have with you, but the best photographs come from being 
+                            present, patient, and willing to embrace the elements."
+                        </p>
+                        <p class="text-gray-300">
+                            Every shoot is an adventure into the unknown, where preparation meets opportunity and 
+                            technical skill serves artistic vision.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 

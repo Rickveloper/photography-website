@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Fryou Photography | Coastal Maine Landscape Photography</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/styles/utilities.css">
+    <meta name="description"
+        content="Explore the complete gallery of coastal Maine landscape photography by Rich Fryou. Dark landscapes from the edge of the Atlantic.">
+
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="Gallery | Fryou Photography | Coastal Maine Landscape Photography">
+    <meta property="og:description"
+        content="Explore the complete gallery of coastal Maine landscape photography by Rich Fryou. Dark landscapes from the edge of the Atlantic.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rickfryou.com/gallery">
+    <meta property="og:image" content="public/images/hero/hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon -->
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <!-- Styles & Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#171717',
+                            700: '#262626',
+                            600: '#404040',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.min.js"></script>
+
+    <script>
+        // Production CMS endpoint. Include port if not reverse-proxied.
+        window.CMS_BASE = "http://YOUR_SERVER_OR_DOMAIN:1337";
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            @apply bg-dark-900 text-gray-100 font-sans antialiased;
+        }
+
+        .image-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            opacity: 0;
+        }
+
+        .fade-in.loaded {
+            opacity: 1;
+            transition: opacity .6s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in {
+                opacity: 1;
+            }
+
+            .fade-in.loaded {
+                transition: none;
+            }
+        }
+
+        /* Masonry Grid Layout */
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.25rem;
+            column-fill: balance;
+        }
+
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .masonry-grid {
+                column-count: 4;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            transform: translateY(1.5rem);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            background: #262626;
+        }
+
+        .gallery-item.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Modern Hover Overlay */
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.1) 30%,
+                rgba(0, 0, 0, 0.7) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-content {
+            transform: translateY(1rem);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-content {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+
+        .gallery-caption {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.875rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .gallery-actions {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            opacity: 0;
+            transform: translateY(-0.5rem);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-btn {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .gallery-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .loading-skeleton {
+            background: linear-gradient(90deg, #262626 25%, #404040 50%, #262626 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .loading-skeleton-image {
+            height: 300px;
+            background: linear-gradient(90deg, #262626 25%, #404040 50%, #262626 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .loading-skeleton-text {
+            height: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gallery-item {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            .masonry-grid {
+                column-gap: 0.75rem;
+            }
+            
+            .gallery-item {
+                margin-bottom: 0.75rem;
+            }
+            
+            .gallery-overlay {
+                padding: 0.75rem;
+            }
+            
+            .gallery-title {
+                font-size: 1rem;
+            }
+            
+            .gallery-caption {
+                font-size: 0.8125rem;
+            }
+            
+            .gallery-actions {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+            
+            .gallery-btn {
+                padding: 0.375rem 0.75rem;
+                font-size: 0.8125rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .gallery-item:hover .gallery-overlay {
+                opacity: 0;
+            }
+            
+            .gallery-item:hover .gallery-actions {
+                opacity: 0;
+            }
+            
+            .gallery-item:hover img {
+                transform: none;
+            }
+            
+            /* Show overlay on touch devices when tapped */
+            .gallery-item.touch-active .gallery-overlay {
+                opacity: 1;
+            }
+            
+            .gallery-item.touch-active .gallery-actions {
+                opacity: 1;
+            }
+        }
+
+        /* Loading animation improvements */
+        .gallery-item img {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .gallery-item img[loading="lazy"] {
+            opacity: 0;
+        }
+        
+        .gallery-item img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tight text-white whitespace-nowrap justify-self-start">
+                <svg width="160" height="32" viewBox="0 0 160 32" aria-label="Fryou Photography" class="h-8">
+                    <path fill="currentColor"
+                        d="M20 8h4v16h-4V8zm-12 0h4v16H8V8zm24 0h4v16h-4V8zm-12 0h4v16h-4V8zm28 0h4v16h-4V8zm-12 0h4v16h-4V8z" />
+                </svg>
+            </a>
+            <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link text-ocean-300 hover:text-white transition font-semibold">Gallery</a>
+                <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html" class="nav-link nav-shop-btn text-gray-300 hover:text-white transition">Shop</a>
+            </nav>
+            <button class="md:hidden focus:outline-none justify-self-end" id="mobile-menu-button"
+                aria-label="Open menu">
+                <i data-feather="menu" class="text-white"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
+            <div class="flex flex-col space-y-2 items-center text-center">
+                <a href="index.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link block px-4 py-2 text-ocean-300 hover:text-white transition font-semibold">Gallery</a>
+                <a href="blog.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html"
+                    class="nav-link nav-shop-btn block text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24 bg-dark-900">
+            <div class="container mx-auto px-6 max-w-[1120px]">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Gallery</h1>
+                    <p class="text-xl md:text-2xl text-gray-200 mb-8">Coastal Maine landscape photography</p>
+                    <div class="w-20 h-1 gradient-ocean mx-auto rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-16 md:py-24 bg-dark-900">
+            <div class="container mx-auto px-6 max-w-[1120px]">
+                <!-- Loading State -->
+                <div id="gallery-loading" class="masonry-grid">
+                    <!-- Loading skeletons -->
+                    <div class="gallery-item loading-skeleton">
+                        <div class="loading-skeleton-image" style="height: 200px;"></div>
+                    </div>
+                    <div class="gallery-item loading-skeleton">
+                        <div class="loading-skeleton-image" style="height: 300px;"></div>
+                    </div>
+                    <div class="gallery-item loading-skeleton">
+                        <div class="loading-skeleton-image" style="height: 250px;"></div>
+                    </div>
+                    <div class="gallery-item loading-skeleton">
+                        <div class="loading-skeleton-image" style="height: 180px;"></div>
+                    </div>
+                    <div class="gallery-item loading-skeleton">
+                        <div class="loading-skeleton-image" style="height: 320px;"></div>
+                    </div>
+                    <div class="gallery-item loading-skeleton">
+                        <div class="loading-skeleton-image" style="height: 220px;"></div>
+                    </div>
+                    <div class="gallery-item loading-skeleton">
+                        <div class="loading-skeleton-image" style="height: 280px;"></div>
+                    </div>
+                    <div class="gallery-item loading-skeleton">
+                        <div class="loading-skeleton-image" style="height: 190px;"></div>
+                    </div>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div id="gallery-grid" class="masonry-grid" style="display: none;">
+                    <!-- Photos will be dynamically loaded here -->
+                </div>
+
+                <!-- Error State -->
+                <div id="gallery-error" class="text-center py-12 hidden">
+                    <div class="text-gray-400 mb-4">
+                        <i data-feather="alert-circle" class="w-16 h-16 mx-auto"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Unable to load gallery</h3>
+                    <p class="text-gray-400 mb-6">There was an error loading the photos. Please try again later.</p>
+                    <button onclick="window.location.reload()" class="px-6 py-3 btn-gradient text-white transition rounded-sm">
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Lightbox Modal -->
+        <div class="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 p-4" id="lightbox" style="display: none;">
+            <!-- Close Button -->
+            <button class="absolute top-4 right-4 z-10 bg-black/50 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50" id="close-lightbox" aria-label="Close lightbox">
+                <i data-feather="x" class="w-6 h-6"></i>
+            </button>
+            
+            <!-- Navigation Buttons -->
+            <button class="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 hidden" id="prev-image" aria-label="Previous image">
+                <i data-feather="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button class="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 hidden" id="next-image" aria-label="Next image">
+                <i data-feather="chevron-right" class="w-6 h-6"></i>
+            </button>
+            
+            <!-- Image Container -->
+            <div class="max-w-7xl w-full max-h-[90vh] flex flex-col items-center">
+                <div class="relative w-full h-full flex items-center justify-center">
+                    <img src="" alt="" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl" id="lightbox-image" loading="lazy" decoding="async">
+                    
+                    <!-- Loading Spinner -->
+                    <div class="absolute inset-0 items-center justify-center hidden" id="lightbox-loading" style="display: flex;">
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+                    </div>
+                </div>
+                
+                <!-- Image Info -->
+                <div class="mt-6 text-white text-center max-w-2xl">
+                    <h3 class="text-3xl font-bold mb-2" id="lightbox-title"></h3>
+                    <p class="text-gray-300 text-lg mb-4" id="lightbox-description"></p>
+                    <div class="flex items-center justify-center gap-4 text-sm text-gray-400">
+                        <span id="lightbox-date"></span>
+                        <span id="lightbox-index" class="bg-white/10 px-3 py-1 rounded-full"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-white/10 py-12 text-gray-300 text-sm break-normal">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="index.html"
+                        class="text-2xl font-bold tracking-tight text-white whitespace-nowrap">Fryou
+                        Photography</a>
+                    <p class="text-gray-500 text-sm">Coastal Maine Landscape Photography</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="flex items-center gap-8">
+                        <a href="https://www.instagram.com/fryouphotography/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="Instagram">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="shop.html"
+                            class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            title="Shop" aria-label="Shop">
+                            <i data-feather="shopping-cart" class="w-5 h-5"></i>
+                        </a>
+                        <a href="rss.xml"
+                            class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            title="RSS Feed" aria-label="RSS Feed">
+                            <i data-feather="rss" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p>&copy; <span id="year">2025</span> All rights reserved.</p>
+                    <p>Fryou Photography</p>
+                    <p>Built by <a href="https://github.com/rickveloper"
+                            class="text-ocean-300 hover:underline">Rickveloper</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Initialize LazyLoad
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazyload",
+            threshold: 100
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-dark-900', 'shadow-lg');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.add('bg-transparent');
+                header.classList.remove('bg-dark-900', 'shadow-lg');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Enhanced Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const closeLightbox = document.getElementById('close-lightbox');
+        const prevBtn = document.getElementById('prev-image');
+        const nextBtn = document.getElementById('next-image');
+
+        // Close lightbox
+        closeLightbox.addEventListener('click', function () {
+            lightbox.classList.add('hidden');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Navigation buttons
+        prevBtn.addEventListener('click', function () {
+            if (window.navigateToPhoto) {
+                window.navigateToPhoto(-1);
+            }
+        });
+
+        nextBtn.addEventListener('click', function () {
+            if (window.navigateToPhoto) {
+                window.navigateToPhoto(1);
+            }
+        });
+
+        // Close lightbox when clicking outside
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (lightbox.classList.contains('hidden')) return;
+            
+            switch (e.key) {
+                case 'Escape':
+                    lightbox.classList.add('hidden');
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    if (window.navigateToPhoto) {
+                        window.navigateToPhoto(-1);
+                    }
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    if (window.navigateToPhoto) {
+                        window.navigateToPhoto(1);
+                    }
+                    break;
+            }
+        });
+
+        // Touch support for mobile devices
+        let touchStartTime = 0;
+        document.addEventListener('touchstart', function(e) {
+            touchStartTime = Date.now();
+        }, { passive: true });
+
+        document.addEventListener('touchend', function(e) {
+            const touchDuration = Date.now() - touchStartTime;
+            const target = e.target.closest('.gallery-item');
+            
+            if (target && touchDuration < 500) {
+                // Quick tap - toggle overlay
+                target.classList.toggle('touch-active');
+                
+                // Remove touch-active class after a delay
+                setTimeout(() => {
+                    target.classList.remove('touch-active');
+                }, 2000);
+            }
+        }, { passive: true });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="src/js/performance.js"></script>
+    <script src="src/js/lazy-observer.js" type="module"></script>
+    <script src="src/js/cms.js" type="module"></script>
+    <script src="src/js/accessibility.js"></script>
+    <script src="src/js/gallery.js" type="module"></script>
+
+</body>
+
+</html>

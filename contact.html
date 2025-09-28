@@ -28,6 +28,7 @@
             </a>
             <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
                 <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link text-gray-300 hover:text-white transition">Gallery</a>
                 <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
                 <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
                 <a href="contact.html" class="nav-link text-ocean-400 hover:text-white transition">Contact</a>
@@ -42,6 +43,7 @@
         <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
             <div class="flex flex-col space-y-4 items-center text-center">
                 <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link text-gray-300 hover:text-white transition">Gallery</a>
                 <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
                 <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
                 <a href="contact.html" class="nav-link text-ocean-400 hover:text-white transition">Contact</a>
@@ -53,11 +55,123 @@
 
     <main id="main-content" class="pt-28 pb-16">
         <div class="container mx-auto px-6 max-w-[900px]">
-            <h1 class="text-4xl md:text-5xl font-bold text-white">Get In Touch</h1>
-            <p class="mt-6 text-gray-300">Email: <a href="mailto:fryou.photography@gmail.com"
-                    class="text-ocean-400 hover:underline">fryou.photography@gmail.com</a></p>
-            <p class="mt-2 text-gray-300">Instagram: <a href="https://www.instagram.com/fryouphotography/"
-                    class="text-ocean-400 hover:underline">@fryouphotography</a></p>
+            <!-- TODO: Replace with Strapi CMS contact form integration -->
+            <!-- CMS Integration Point: Contact form will be handled by Strapi backend -->
+            
+            <div class="text-center mb-16 slide-in" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-white">Get In Touch</h1>
+                <div class="w-20 h-1 gradient-ocean mx-auto rounded-full mt-4"></div>
+                <p class="text-xl text-gray-300 mt-6 max-w-2xl mx-auto">
+                    Questions about prints, commissions, or just want to say hello? I'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Form -->
+                <div class="slide-in" data-aos="fade-right">
+                    <h2 class="text-2xl font-bold text-white mb-6">Send a Message</h2>
+                    <form id="contact-form" class="space-y-6" novalidate>
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2 font-medium">Name *</label>
+                            <input type="text" id="name" name="name" required autocomplete="name"
+                                class="w-full px-4 py-3 bg-dark-700 border border-dark-600 text-white focus:border-ocean-500 focus:outline-none rounded-sm transition-colors"
+                                placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2 font-medium">Email *</label>
+                            <input type="email" id="email" name="email" required autocomplete="email"
+                                pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                                class="w-full px-4 py-3 bg-dark-700 border border-dark-600 text-white focus:border-ocean-500 focus:outline-none rounded-sm transition-colors"
+                                placeholder="your.email@example.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2 font-medium">Subject</label>
+                            <select id="subject" name="subject"
+                                class="w-full px-4 py-3 bg-dark-700 border border-dark-600 text-white focus:border-ocean-500 focus:outline-none rounded-sm transition-colors">
+                                <option value="">Select a subject</option>
+                                <option value="print-inquiry">Print Inquiry</option>
+                                <option value="commission">Commission Work</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="general">General Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2 font-medium">Message *</label>
+                            <textarea id="message" name="message" rows="6" required
+                                class="w-full px-4 py-3 bg-dark-700 border border-dark-600 text-white focus:border-ocean-500 focus:outline-none rounded-sm transition-colors resize-vertical"
+                                placeholder="Tell me about your project, questions, or just say hello..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full px-6 py-3 btn-gradient text-white transition rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500 hover:transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="slide-in" data-aos="fade-left">
+                    <h2 class="text-2xl font-bold text-white mb-6">Other Ways to Connect</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-ocean-600 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i data-feather="mail" class="text-white w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white mb-1">Email</h3>
+                                <a href="mailto:fryou.photography@gmail.com"
+                                    class="text-ocean-300 hover:text-white transition">fryou.photography@gmail.com</a>
+                                <p class="text-gray-400 text-sm mt-1">Usually responds within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-ocean-600 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i data-feather="instagram" class="text-white w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white mb-1">Instagram</h3>
+                                <a href="https://www.instagram.com/fryouphotography/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-ocean-300 hover:text-white transition">@fryouphotography</a>
+                                <p class="text-gray-400 text-sm mt-1">Behind-the-scenes and latest work</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-ocean-600 p-3 rounded-full mr-4 flex-shrink-0">
+                                <i data-feather="map-pin" class="text-white w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white mb-1">Location</h3>
+                                <p class="text-gray-300">York, Maine</p>
+                                <p class="text-gray-400 text-sm mt-1">Available for local shoots and consultations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Print Information -->
+                    <div class="mt-12 pt-8 border-t border-dark-700">
+                        <h3 class="text-xl font-bold text-white mb-4">Print Inquiries</h3>
+                        <div class="bg-dark-800 rounded-sm p-6">
+                            <p class="text-gray-300 mb-4">
+                                Limited edition fine art prints are available in various sizes and formats. 
+                                Each print is carefully produced using archival materials and professional printing techniques.
+                            </p>
+                            <ul class="text-gray-300 space-y-2">
+                                <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-ocean-300"></i> 8×10 to 24×36 inch prints</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-ocean-300"></i> Matte and luster finishes</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-ocean-300"></i> Framing options available</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-ocean-300"></i> Digital downloads for personal use</li>
+                            </ul>
+                            <p class="text-gray-300 mt-4">
+                                Commissions for commercial or editorial work are considered on a project basis. 
+                                Please include details about your project timeline and requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

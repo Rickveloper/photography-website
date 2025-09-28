@@ -12,7 +12,7 @@ const SITE_DIR = await (async () => {
   return ROOT
 })()
 
-const PAGES = ['index.html','about.html','blog.html','blog-post.html','contact.html','shop.html']
+const PAGES = ['index.html','gallery.html','about.html','blog.html','blog-post.html','contact.html','shop.html']
 
 const isRelative = href =>
   href && !/^(https?:|mailto:|tel:|#|data:)/i.test(href)

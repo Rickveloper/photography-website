@@ -98,16 +98,114 @@ body.min-h-screen {
 }
 
 .hero-image {
-  width: 100vw;
-  height: 100vh;
+  /* Fixed: Proper image sizing to prevent stretching */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
   margin: 0;
   padding: 0;
   display: block;
+  /* Enhanced parallax effect with scale */
+  transform: scale(1.1) translateZ(0);
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+  /* Ensure proper aspect ratio and prevent stretching */
+  min-height: 100vh;
+  min-width: 100vw;
+  /* GPU acceleration for smooth parallax */
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Parallax container for smooth scrolling effect */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced parallax background layer */
+.parallax-bg {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background-image: url('public/images/hero/hero-1920.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+  /* Enhanced parallax movement */
+  will-change: transform;
+  z-index: -2;
+  /* GPU acceleration for smooth scrolling */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  /* Initial parallax offset */
+  transform: translateY(0) scale(1.1);
+}
+
+/* Smooth parallax movement on scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .parallax-bg {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* Disable parallax on mobile for performance */
+@media (max-width: 768px) {
+  .hero-image,
+  .parallax-bg {
+    background-attachment: scroll;
+    transform: none;
+  }
+}
+
+/* Smooth gradient transition section after hero */
+.hero-gradient-transition {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(180deg, 
+    rgba(10, 10, 10, 0) 0%,
+    rgba(10, 10, 10, 0.3) 25%,
+    rgba(23, 23, 23, 0.6) 50%,
+    rgba(23, 23, 23, 0.9) 75%,
+    rgba(23, 23, 23, 1) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Enhanced parallax scroll effect */
+.parallax-scroll {
+  transform: translateY(var(--scroll-offset, 0));
+  transition: transform 0.1s ease-out;
+}
+
+/* 
+ * HERO SECTION ENHANCEMENTS
+ * 
+ * Changes made to fix hero image stretching and add parallax:
+ * 1. Fixed hero-image CSS to use proper object-fit: cover
+ * 2. Enhanced parallax-bg with better scaling and positioning
+ * 3. Added hero-gradient-transition for smooth background transition
+ * 4. Enhanced parallax scroll effect with CSS custom properties
+ * 5. Added GPU acceleration with translateZ(0) and backface-visibility
+ */
+
+/* Ensure hero image maintains aspect ratio on all devices */
+@media (max-width: 768px) {
+  .hero-image {
+    object-position: center center;
+    /* Maintain proper scaling on mobile */
+    transform: scale(1.05) translateZ(0);
+  }
+  
+  .parallax-bg {
+    /* Simplified parallax on mobile for performance */
+    transform: translateY(0) scale(1.05);
+  }
 }
 
 .film-grain picture,
@@ -137,6 +235,215 @@ body.min-h-screen {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Enhanced scroll-triggered animations */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.loaded {
+  opacity: 1;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Additional animation variants */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-2rem);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-left.loaded {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(2rem);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-right.loaded {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-up.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Product card specific animations */
+.product-card {
+  opacity: 0;
+  transform: translateY(1rem) scale(0.98);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.product-card.loaded {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered animations for grids */
+.animate-stagger-1 { transition-delay: 0.1s; }
+.animate-stagger-2 { transition-delay: 0.2s; }
+.animate-stagger-3 { transition-delay: 0.3s; }
+.animate-stagger-4 { transition-delay: 0.4s; }
+.animate-stagger-5 { transition-delay: 0.5s; }
+.animate-stagger-6 { transition-delay: 0.6s; }
+
+/* Staggered animations for portfolio items */
+.portfolio-item {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.portfolio-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Blog card animations */
+.blog-card {
+  opacity: 0;
+  transform: translateY(1rem) scale(0.98);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.blog-card.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Smooth transitions for all animated elements */
+.animate-in {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Performance optimizations */
+.fade-in,
+.slide-in,
+.scale-in,
+.portfolio-item,
+.blog-card {
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-in,
+  .scale-in,
+  .portfolio-item,
+  .blog-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Performance optimizations for smooth scrolling and animations */
+html {
+  scroll-behavior: smooth;
+  /* Enable hardware acceleration */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize image loading and rendering */
+img {
+  /* Prevent layout shift */
+  height: auto;
+  /* Enable hardware acceleration for images */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize transitions for better performance */
+* {
+  /* Use GPU acceleration for transforms */
+  transform: translateZ(0);
+}
+
+/* Critical CSS for above-the-fold content */
+.hero-section {
+  /* Ensure hero loads quickly */
+  contain: layout style paint;
+}
+
+/* Optimize font loading */
+body {
+  font-display: swap;
+  /* Prevent FOUT (Flash of Unstyled Text) */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* Reduce paint complexity for better performance */
+.portfolio-item,
+.blog-card {
+  /* Isolate stacking context */
+  isolation: isolate;
+  /* Optimize repaints */
+  contain: layout style paint;
+}
+
+/* Optimize hover effects for better performance */
+.image-hover {
+  /* Use transform instead of changing layout properties */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.image-hover:hover {
+  /* Use transform for better performance */
+  transform: translateY(-4px) translateZ(0);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Optimize parallax performance */
+.parallax-bg,
+.hero-image {
+  /* Use transform3d for hardware acceleration */
+  transform: translate3d(0, 0, 0);
+  /* Optimize for scrolling performance */
+  will-change: transform;
+  /* Prevent unnecessary repaints */
+  backface-visibility: hidden;
 }
 
 /* Section spacing handled by Tailwind utilities in HTML */

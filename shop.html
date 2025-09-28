@@ -32,6 +32,7 @@
       </a>
       <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
         <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+        <a href="gallery.html" class="nav-link text-gray-300 hover:text-white transition">Gallery</a>
         <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
         <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
@@ -45,6 +46,7 @@
     <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
       <div class="flex flex-col space-y-4 items-center text-center">
         <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+        <a href="gallery.html" class="nav-link text-gray-300 hover:text-white transition">Gallery</a>
         <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
         <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
@@ -55,27 +57,207 @@
   </header>
 
   <main id="main-content" class="pt-28 pb-16">
-    <section class="min-h-[60vh] flex items-center">
-      <div class="container mx-auto px-6 text-center max-w-2xl">
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white">Shop — Coming Soon</h1>
-        <p class="mt-6 text-gray-400">Curated, archival-quality prints and digital downloads with secure checkout will
-          launch here.</p>
-        <div class="mt-8">
-          <a href="index.html"
-            class="inline-flex items-center gap-2 px-6 py-3 btn-gradient text-white transition rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500">
-            <i data-feather="arrow-left" class="w-4 h-4"></i> Back to Home
-          </a>
+    <div class="container mx-auto px-6 max-w-[1120px]">
+      <!-- TODO: Replace with Strapi CMS shop products -->
+      <!-- CMS Integration Point: Shop products will be fetched from /api/products endpoint -->
+      
+      <div class="text-center mb-16 slide-in" data-aos="fade-up">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white">Shop</h1>
+        <div class="w-20 h-1 gradient-ocean mx-auto rounded-full mt-4"></div>
+        <p class="mt-6 text-xl text-gray-300 max-w-2xl mx-auto">
+          Fine art prints and digital downloads from the coast of Maine. Each piece is carefully crafted for archival quality.
+        </p>
+      </div>
+
+      <!-- Coming Soon Banner -->
+      <div class="bg-gradient-to-r from-ocean-600 to-ocean-800 rounded-sm p-6 mb-12 text-center slide-in" data-aos="fade-up">
+        <h2 class="text-2xl font-bold text-white mb-2">Coming Soon</h2>
+        <p class="text-ocean-100">Secure checkout and print fulfillment launching soon. Sign up for updates below.</p>
+      </div>
+
+      <!-- Product Categories -->
+      <div class="flex flex-wrap justify-center mb-12 gap-4 slide-in" data-aos="fade-up">
+        <button class="px-6 py-2 btn-gradient text-white transition rounded-sm filter-btn active" data-filter="all">
+          All Products
+        </button>
+        <button class="px-6 py-2 bg-dark-800 text-gray-300 hover:bg-ocean-600 hover:text-white transition rounded-sm filter-btn" data-filter="prints">
+          Prints
+        </button>
+        <button class="px-6 py-2 bg-dark-800 text-gray-300 hover:bg-ocean-600 hover:text-white transition rounded-sm filter-btn" data-filter="digital">
+          Digital Downloads
+        </button>
+        <button class="px-6 py-2 bg-dark-800 text-gray-300 hover:bg-ocean-600 hover:text-white transition rounded-sm filter-btn" data-filter="collections">
+          Collections
+        </button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="product-grid">
+        
+        <!-- Product Card 1 -->
+        <div class="product-card prints bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+          <div class="relative">
+            <img src="public/images/featured/rf-winter-01.jpg" alt="Winter Coast Print"
+              class="w-full aspect-[4/3] object-cover" loading="lazy">
+            <div class="absolute top-4 left-4">
+              <span class="bg-ocean-600 text-white px-3 py-1 text-sm rounded-full">Print</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-red-600 text-white px-3 py-1 text-sm rounded-full">Coming Soon</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Winter Coast</h3>
+            <p class="text-gray-300 text-sm mb-4">Frozen granite meets Atlantic fury in this dramatic winter scene.</p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-ocean-300 font-bold">8×10" - $45</span>
+              <span class="text-gray-400 line-through">16×20" - $95</span>
+            </div>
+            <button class="w-full px-4 py-2 bg-dark-600 text-gray-400 rounded-sm cursor-not-allowed" disabled>
+              Coming Soon
+            </button>
+          </div>
         </div>
-        <div class="mt-12 border border-white/10 rounded-sm p-6 text-left">
-          <h2 class="text-lg font-semibold text-white">Planned Offerings</h2>
-          <ul class="mt-4 space-y-2 text-gray-300 list-disc list-inside">
-            <li>Matte and luster prints (8×10 to 24×36)</li>
-            <li>Framed prints with UV acrylic</li>
-            <li>Aluminum and canvas mounts</li>
-          </ul>
+
+        <!-- Product Card 2 -->
+        <div class="product-card digital bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+          <div class="relative">
+            <img src="public/images/featured/rf-spring-01.jpg" alt="Spring Awakening Digital Download"
+              class="w-full aspect-[4/3] object-cover" loading="lazy">
+            <div class="absolute top-4 left-4">
+              <span class="bg-green-600 text-white px-3 py-1 text-sm rounded-full">Digital</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-red-600 text-white px-3 py-1 text-sm rounded-full">Coming Soon</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Spring Awakening</h3>
+            <p class="text-gray-300 text-sm mb-4">The delicate balance between winter's end and summer's promise.</p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-ocean-300 font-bold">HD Download - $15</span>
+              <span class="text-gray-400 line-through">4K Download - $25</span>
+            </div>
+            <button class="w-full px-4 py-2 bg-dark-600 text-gray-400 rounded-sm cursor-not-allowed" disabled>
+              Coming Soon
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="product-card prints bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+          <div class="relative">
+            <img src="public/images/featured/rf-summer-01.jpg" alt="Golden Hour Print"
+              class="w-full aspect-[4/3] object-cover" loading="lazy">
+            <div class="absolute top-4 left-4">
+              <span class="bg-ocean-600 text-white px-3 py-1 text-sm rounded-full">Print</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-red-600 text-white px-3 py-1 text-sm rounded-full">Coming Soon</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Golden Hour</h3>
+            <p class="text-gray-300 text-sm mb-4">Light dances across Maine's iconic rocky shoreline.</p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-ocean-300 font-bold">12×18" - $75</span>
+              <span class="text-gray-400 line-through">24×36" - $195</span>
+            </div>
+            <button class="w-full px-4 py-2 bg-dark-600 text-gray-400 rounded-sm cursor-not-allowed" disabled>
+              Coming Soon
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="product-card collections bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+          <div class="relative">
+            <img src="public/images/featured/rf-fall-01.jpg" alt="Four Seasons Collection"
+              class="w-full aspect-[4/3] object-cover" loading="lazy">
+            <div class="absolute top-4 left-4">
+              <span class="bg-purple-600 text-white px-3 py-1 text-sm rounded-full">Collection</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-red-600 text-white px-3 py-1 text-sm rounded-full">Coming Soon</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Four Seasons Set</h3>
+            <p class="text-gray-300 text-sm mb-4">Complete seasonal journey along the Maine coast.</p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-ocean-300 font-bold">8×10" Set - $150</span>
+              <span class="text-gray-400 line-through">16×20" Set - $350</span>
+            </div>
+            <button class="w-full px-4 py-2 bg-dark-600 text-gray-400 rounded-sm cursor-not-allowed" disabled>
+              Coming Soon
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="product-card digital bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+          <div class="relative">
+            <img src="public/images/featured/rf-ocean-01.jpg" alt="Storm Surge Digital Download"
+              class="w-full aspect-[4/3] object-cover" loading="lazy">
+            <div class="absolute top-4 left-4">
+              <span class="bg-green-600 text-white px-3 py-1 text-sm rounded-full">Digital</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-red-600 text-white px-3 py-1 text-sm rounded-full">Coming Soon</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Storm Surge</h3>
+            <p class="text-gray-300 text-sm mb-4">The Atlantic's power captured in dramatic detail.</p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-ocean-300 font-bold">HD Download - $15</span>
+              <span class="text-gray-400 line-through">4K Download - $25</span>
+            </div>
+            <button class="w-full px-4 py-2 bg-dark-600 text-gray-400 rounded-sm cursor-not-allowed" disabled>
+              Coming Soon
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="product-card prints bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+          <div class="relative">
+            <img src="public/images/featured/rf-storm-01.jpg" alt="Nor'easter Print"
+              class="w-full aspect-[4/3] object-cover" loading="lazy">
+            <div class="absolute top-4 left-4">
+              <span class="bg-ocean-600 text-white px-3 py-1 text-sm rounded-full">Print</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-red-600 text-white px-3 py-1 text-sm rounded-full">Coming Soon</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Nor'easter</h3>
+            <p class="text-gray-300 text-sm mb-4">Maine's most dramatic weather events in full force.</p>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-ocean-300 font-bold">16×24" - $125</span>
+              <span class="text-gray-400 line-through">32×48" - $295</span>
+            </div>
+            <button class="w-full px-4 py-2 bg-dark-600 text-gray-400 rounded-sm cursor-not-allowed" disabled>
+              Coming Soon
+            </button>
+          </div>
         </div>
       </div>
-    </section>
+
+      <!-- Newsletter Signup -->
+      <div class="bg-dark-800 rounded-sm p-8 text-center slide-in" data-aos="fade-up">
+        <h2 class="text-2xl font-bold text-white mb-4">Stay Updated</h2>
+        <p class="text-gray-300 mb-6">Be the first to know when the shop launches and get early access to new releases.</p>
+        <form class="max-w-md mx-auto flex gap-4">
+          <input type="email" placeholder="Enter your email" 
+            class="flex-1 px-4 py-3 bg-dark-700 border border-dark-600 text-white focus:border-ocean-500 focus:outline-none rounded-sm">
+          <button type="submit" class="px-6 py-3 btn-gradient text-white transition rounded-sm hover:transform hover:scale-105">
+            Notify Me
+          </button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <footer class="mt-20 border-t border-white/10 py-12 text-gray-400 text-sm break-normal">
@@ -132,9 +314,52 @@
     AOS.init({ duration: 800, once: true });
     feather.replace();
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuButton.addEventListener('click', function () { mobileMenu.classList.toggle('hidden'); });
+
+    // Shop product filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Update active state
+        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-ocean-500', 'text-white'));
+        this.classList.add('active', 'bg-ocean-500', 'text-white');
+
+        // Filter products
+        const filterValue = this.getAttribute('data-filter');
+        
+        productCards.forEach((card, index) => {
+          if (filterValue === 'all' || card.classList.contains(filterValue)) {
+            card.style.display = 'block';
+            // Add staggered animation
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0) scale(1)';
+            }, index * 100);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Newsletter signup form
+    const newsletterForm = document.querySelector('form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        if (email) {
+          alert('Thank you for signing up! You\'ll be notified when the shop launches.');
+          this.reset();
+        }
+      });
+    }
   </script>
   <script src="src/js/lazy-observer.js" type="module"></script>
   <script src="src/js/cms.js" type="module"></script>

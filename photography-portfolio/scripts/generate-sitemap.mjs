@@ -60,12 +60,12 @@ async function main() {
     const outPath = join(outDir, 'sitemap.xml');
     await fs.mkdir(outDir, { recursive: true });
     await fs.writeFile(outPath, xml, 'utf8');
-    // eslint-disable-next-line no-console
+     
     console.log(`Sitemap written to ${outPath}`);
 }
 
 main().catch((err) => {
-    // eslint-disable-next-line no-console
+     
     console.error(err);
     process.exit(1);
 });

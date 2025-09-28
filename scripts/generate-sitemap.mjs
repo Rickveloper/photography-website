@@ -15,7 +15,7 @@ const PUBLIC_DIR = path.join(SITE_DIR, 'public')
 const OUT = path.join(PUBLIC_DIR, 'sitemap.xml')
 const CONFIG_PATH = path.join(ROOT, 'site.config.json')
 
-const PAGES = ['index.html','about.html','blog.html','blog-post.html','contact.html','shop.html']
+const PAGES = ['index.html','gallery.html','about.html','blog.html','blog-post.html','contact.html','shop.html']
 
 async function readConfig() {
   const raw = await fs.readFile(CONFIG_PATH, 'utf8')

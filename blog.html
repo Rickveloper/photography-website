@@ -135,6 +135,7 @@
             </a>
             <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
                 <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link text-gray-300 hover:text-white transition">Gallery</a>
                 <a href="blog.html" class="nav-link text-ocean-400 hover:text-white transition">Blog</a>
                 <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
                 <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
@@ -149,6 +150,7 @@
         <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
             <div class="flex flex-col space-y-2 items-center text-center">
                 <a href="index.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Home</a>
+                <a href="gallery.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Gallery</a>
                 <a href="blog.html" class="nav-link block px-4 py-2 text-ocean-400 hover:text-white transition">Blog</a>
                 <a href="about.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">About</a>
                 <a href="contact.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Contact</a>
@@ -171,57 +173,124 @@
             </div>
 
             <!-- Blog Grid -->
+            <!-- TODO: Replace with Strapi CMS blog posts -->
+            <!-- CMS Integration Point: Blog posts will be fetched from /api/posts endpoint -->
             <div id="blog-grid"
                 class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12 items-stretch cv-auto blog-grid">
-                <!-- Loading skeletons -->
-                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
-                    <div class="loading-skeleton-image"></div>
-                    <div class="p-6">
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
+                
+                <!-- Placeholder Blog Post 1 -->
+                <article class="bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="public/images/featured/rf-winter-01.jpg" alt="Winter coastline photography"
+                            class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-ocean-600 text-white px-3 py-1 text-sm rounded-full">Winter</span>
+                        </div>
                     </div>
-                </div>
-                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
-                    <div class="loading-skeleton-image"></div>
                     <div class="p-6">
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <time class="text-gray-400 text-sm">January 15, 2025</time>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Capturing Maine's Brutal Winters</h3>
+                        <p class="text-gray-300 mb-4">Exploring the harsh beauty of coastal Maine during the coldest months, when the Atlantic's fury meets frozen granite.</p>
+                        <a href="blog-post.html" class="text-ocean-300 hover:text-white transition inline-flex items-center">
+                            Read More <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                     </div>
-                </div>
-                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
-                    <div class="loading-skeleton-image"></div>
+                </article>
+
+                <!-- Placeholder Blog Post 2 -->
+                <article class="bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="public/images/featured/rf-spring-01.jpg" alt="Spring coastal photography"
+                            class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-600 text-white px-3 py-1 text-sm rounded-full">Spring</span>
+                        </div>
+                    </div>
                     <div class="p-6">
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <time class="text-gray-400 text-sm">March 22, 2025</time>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">The Awakening Coast</h3>
+                        <p class="text-gray-300 mb-4">As ice recedes and life returns to the shoreline, capturing the delicate balance between winter's end and summer's promise.</p>
+                        <a href="blog-post.html" class="text-ocean-300 hover:text-white transition inline-flex items-center">
+                            Read More <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                     </div>
-                </div>
-                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
-                    <div class="loading-skeleton-image"></div>
+                </article>
+
+                <!-- Placeholder Blog Post 3 -->
+                <article class="bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="public/images/featured/rf-summer-01.jpg" alt="Summer coastal photography"
+                            class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-yellow-600 text-white px-3 py-1 text-sm rounded-full">Summer</span>
+                        </div>
+                    </div>
                     <div class="p-6">
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <time class="text-gray-400 text-sm">July 8, 2025</time>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Golden Hour on the Granite Coast</h3>
+                        <p class="text-gray-300 mb-4">Chasing the perfect light as it dances across Maine's iconic rocky shoreline during the fleeting summer evenings.</p>
+                        <a href="blog-post.html" class="text-ocean-300 hover:text-white transition inline-flex items-center">
+                            Read More <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                     </div>
-                </div>
-                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
-                    <div class="loading-skeleton-image"></div>
+                </article>
+
+                <!-- Placeholder Blog Post 4 -->
+                <article class="bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="public/images/featured/rf-fall-01.jpg" alt="Autumn coastal photography"
+                            class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-orange-600 text-white px-3 py-1 text-sm rounded-full">Fall</span>
+                        </div>
+                    </div>
                     <div class="p-6">
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <time class="text-gray-400 text-sm">October 12, 2025</time>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Autumn's Last Stand</h3>
+                        <p class="text-gray-300 mb-4">Documenting the final burst of color before winter's return, when the coastline transforms in a blaze of autumn glory.</p>
+                        <a href="blog-post.html" class="text-ocean-300 hover:text-white transition inline-flex items-center">
+                            Read More <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                     </div>
-                </div>
-                <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
-                    <div class="loading-skeleton-image"></div>
+                </article>
+
+                <!-- Placeholder Blog Post 5 -->
+                <article class="bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="public/images/featured/rf-ocean-01.jpg" alt="Ocean photography techniques"
+                            class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 text-sm rounded-full">Technique</span>
+                        </div>
+                    </div>
                     <div class="p-6">
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
-                        <div class="loading-skeleton loading-skeleton-text"></div>
+                        <time class="text-gray-400 text-sm">November 3, 2025</time>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Mastering Long Exposures</h3>
+                        <p class="text-gray-300 mb-4">Technical insights on capturing the Atlantic's power through long exposure techniques and equipment choices.</p>
+                        <a href="blog-post.html" class="text-ocean-300 hover:text-white transition inline-flex items-center">
+                            Read More <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                     </div>
-                </div>
+                </article>
+
+                <!-- Placeholder Blog Post 6 -->
+                <article class="bg-dark-700 rounded-sm overflow-hidden image-hover slide-in" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="public/images/featured/rf-storm-01.jpg" alt="Storm photography"
+                            class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-gray-600 text-white px-3 py-1 text-sm rounded-full">Weather</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <time class="text-gray-400 text-sm">December 18, 2025</time>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Shooting in Nor'easters</h3>
+                        <p class="text-gray-300 mb-4">Behind the scenes of photographing Maine's most dramatic weather events, when the Atlantic unleashes its full fury.</p>
+                        <a href="blog-post.html" class="text-ocean-300 hover:text-white transition inline-flex items-center">
+                            Read More <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
             </div>
 
             <!-- Pagination -->
