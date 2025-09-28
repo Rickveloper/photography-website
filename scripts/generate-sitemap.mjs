@@ -1,73 +1,64 @@
-import { promises as fs } from 'node:fs';
-import { resolve, join } from 'node:path';
+// scripts/generate-sitemap.mjs
+import { promises as fs } from 'node:fs'
+import path from 'node:path'
 
-const ROOT = resolve(process.cwd());
+const ROOT = process.cwd()
+const CANDIDATE_DIRS = [ROOT, path.join(ROOT, 'photography-portfolio')]
+const SITE_DIR = await (async () => {
+  for (const d of CANDIDATE_DIRS) {
+    try { await fs.access(path.join(d, 'index.html')); return d } catch {}
+  }
+  return ROOT
+})()
 
-async function readSiteConfig() {
-    const configPath = resolve(ROOT, 'site.config.json');
-    const raw = await fs.readFile(configPath, 'utf8');
-    const json = JSON.parse(raw);
-    if (!json.siteUrl || typeof json.siteUrl !== 'string') {
-        throw new Error('site.config.json must contain a string field "siteUrl"');
-    }
-    return json;
+const PUBLIC_DIR = path.join(SITE_DIR, 'public')
+const OUT = path.join(PUBLIC_DIR, 'sitemap.xml')
+const CONFIG_PATH = path.join(ROOT, 'site.config.json')
+
+const PAGES = ['index.html','about.html','blog.html','blog-post.html','contact.html','shop.html']
+
+async function readConfig() {
+  const raw = await fs.readFile(CONFIG_PATH, 'utf8')
+  const json = JSON.parse(raw)
+  if (!json.siteUrl) throw new Error('siteUrl missing in site.config.json')
+  return json
+}
+function toUrl(base, file) {
+  const clean = file === 'index.html' ? '' : `/${file}`
+  return `${base.replace(/\/+$/, '')}${clean}`
+}
+async function lastMod(file) {
+  const stat = await fs.stat(path.join(SITE_DIR, file))
+  return stat.mtime.toISOString().slice(0, 10)
 }
 
-async function getLastModIso(date) {
-    // yyyy-mm-dd format
-    return date.toISOString().slice(0, 10);
-}
-
-async function buildUrlEntry(loc, lastmod) {
-    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`;
-}
+const exists = p => fs.access(p).then(() => true).catch(() => false)
 
 async function main() {
-    const { siteUrl } = await readSiteConfig();
+  const { siteUrl } = await readConfig()
+  await fs.mkdir(PUBLIC_DIR, { recursive: true })
 
-    const targetFiles = [
-        'index.html',
-        'about.html',
-        'blog.html',
-        'blog-post.html',
-        'contact.html',
-        'shop.html',
-    ];
-
-    const entries = [];
-    for (const file of targetFiles) {
-        const absPath = resolve(ROOT, file);
-        let stat;
-        try {
-            stat = await fs.stat(absPath);
-        } catch (err) {
-            // Skip missing files
-            continue;
-        }
-        if (!stat.isFile()) continue;
-
-        const lastmod = await getLastModIso(stat.mtime);
-        const loc = new URL(file === 'index.html' ? '/' : `/${file.replace(/\.html$/, '')}`, siteUrl).toString();
-        entries.push(await buildUrlEntry(loc, lastmod));
+  const items = []
+  for (const f of PAGES) {
+    const full = path.join(SITE_DIR, f)
+    if (await exists(full)) {
+      items.push({ url: toUrl(siteUrl, f), lm: await lastMod(f) })
     }
+  }
 
-    const xml = `<?xml version="1.0" encoding="UTF-8"?>\n` +
-        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-        entries.join('\n') + (entries.length ? '\n' : '') +
-        `</urlset>\n`;
+  const body = items.map(i => `  <url>
+    <loc>${i.url}</loc>
+    <lastmod>${i.lm}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${i.url.endsWith('/') ? '1.0' : '0.8'}</priority>
+  </url>`).join('\n')
 
-    const outDir = resolve(ROOT, 'public');
-    const outPath = join(outDir, 'sitemap.xml');
-    await fs.mkdir(outDir, { recursive: true });
-    await fs.writeFile(outPath, xml, 'utf8');
-    // eslint-disable-next-line no-console
-    console.log(`Sitemap written to ${outPath}`);
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${body}
+</urlset>
+`
+  await fs.writeFile(OUT, xml, 'utf8')
+  console.log(`Wrote ${path.relative(ROOT, OUT)} with ${items.length} URLs (site dir: ${path.relative(ROOT, SITE_DIR) || '.'})`)
 }
-
-main().catch((err) => {
-    // eslint-disable-next-line no-console
-    console.error(err);
-    process.exit(1);
-});
-
-
+main().catch(e => { console.error(e.message); process.exit(1) })

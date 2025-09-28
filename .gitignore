@@ -1,2 +1,60 @@
-node_modules
-node_modules
+# Node dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+build/
+dist/
+.out/
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+.tmp/
+.temp/
+.cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+
+# Env files
+.env
+.env.*
+*.local
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Coverage
+coverage/
+
+# Lockfiles (optional; keep if you prefer committing them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Static hosts / deploy
+.vercel/
+.netlify/
+
+# Storybook / docs
+storybook-static/
+.docs/
+
+# Strapi/Headless CMS uploads (runtime-generated)
+photography-portfolio/infra/cms/uploads/
+photography-portfolio/infra/app/public/uploads/
+
+# Misc
+*.tgz
+*.zip
