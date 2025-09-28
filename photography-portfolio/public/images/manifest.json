@@ -1,0 +1,1850 @@
+{
+  "images/featured/rf-fall-01-8": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-fall-01-8",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-fall-01": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-fall-01",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-fall-01-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-ocean-01-8": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-ocean-01-8",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-ocean-01": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-ocean-01",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-ocean-01-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-spring-01-8": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-spring-01-8",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-spring-01": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-spring-01",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-spring-01-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-summer-01-8": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-summer-01-8",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-summer-01": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-summer-01",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-summer-01-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-winter-01-8": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-winter-01-8",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8-8.jpg"
+      }
+    ]
+  },
+  "images/featured/rf-winter-01": {
+    "width": 8,
+    "height": 8,
+    "base": "images/featured/rf-winter-01",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/featured/rf-winter-01-8.jpg"
+      }
+    ]
+  },
+  "images/hero/hero-01-8": {
+    "width": 8,
+    "height": 8,
+    "base": "images/hero/hero-01-8",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8-8.jpg"
+      }
+    ]
+  },
+  "images/hero/hero-01": {
+    "width": 8,
+    "height": 8,
+    "base": "images/hero/hero-01",
+    "webp": [
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8.webp"
+      },
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8.jpg"
+      },
+      {
+        "width": 8,
+        "path": "images/hero/hero-01-8.jpg"
+      }
+    ]
+  },
+  "images/hero/hero-1440": {
+    "width": 1440,
+    "height": 1152,
+    "base": "images/hero/hero-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/hero/hero-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/hero/hero-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/hero/hero-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/hero/hero-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/hero/hero-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/hero/hero-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/hero/hero-1920": {
+    "width": 1920,
+    "height": 1536,
+    "base": "images/hero/hero-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/hero/hero-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/hero/hero-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/hero/hero-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/hero/hero-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/hero/hero-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/hero/hero-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/hero/hero-960": {
+    "width": 960,
+    "height": 768,
+    "base": "images/hero/hero-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/hero/hero-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/hero/hero-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/hero/hero-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/hero/hero-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/hero/hero-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/hero/hero-960-960.jpg"
+      }
+    ]
+  },
+  "images/hero/hero": {
+    "width": 1920,
+    "height": 1536,
+    "base": "images/hero/hero",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/hero/hero-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/hero/hero-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/hero/hero-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/hero/hero-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/hero/hero-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/hero/hero-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/fall-1-1440": {
+    "width": 1440,
+    "height": 1080,
+    "base": "images/portfolio/fall-1-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-1-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-1-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-1-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-1-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/fall-1-1920": {
+    "width": 1920,
+    "height": 1440,
+    "base": "images/portfolio/fall-1-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-1-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/fall-1-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-1-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/fall-1-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/fall-1-960": {
+    "width": 960,
+    "height": 720,
+    "base": "images/portfolio/fall-1-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/fall-1": {
+    "width": 1920,
+    "height": 1440,
+    "base": "images/portfolio/fall-1",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-1-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/fall-1-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-1-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-1-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/fall-1-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/fall-2-1440": {
+    "width": 1440,
+    "height": 808,
+    "base": "images/portfolio/fall-2-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-2-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-2-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-2-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-2-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/fall-2-1920": {
+    "width": 1920,
+    "height": 1078,
+    "base": "images/portfolio/fall-2-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-2-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/fall-2-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-2-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/fall-2-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/fall-2-960": {
+    "width": 960,
+    "height": 539,
+    "base": "images/portfolio/fall-2-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/fall-2": {
+    "width": 1920,
+    "height": 1078,
+    "base": "images/portfolio/fall-2",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-2-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/fall-2-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/fall-2-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/fall-2-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/fall-2-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/ocean-1-1440": {
+    "width": 1440,
+    "height": 961,
+    "base": "images/portfolio/ocean-1-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-1-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-1-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-1-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-1-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/ocean-1-1920": {
+    "width": 1920,
+    "height": 1282,
+    "base": "images/portfolio/ocean-1-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-1-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/ocean-1-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-1-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/ocean-1-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/ocean-1-960": {
+    "width": 960,
+    "height": 641,
+    "base": "images/portfolio/ocean-1-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/ocean-1": {
+    "width": 1920,
+    "height": 1282,
+    "base": "images/portfolio/ocean-1",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-1-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/ocean-1-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-1-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-1-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/ocean-1-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/ocean-2-1440": {
+    "width": 1440,
+    "height": 960,
+    "base": "images/portfolio/ocean-2-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-2-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-2-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-2-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-2-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/ocean-2-1920": {
+    "width": 1920,
+    "height": 1280,
+    "base": "images/portfolio/ocean-2-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-2-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/ocean-2-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-2-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/ocean-2-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/ocean-2-960": {
+    "width": 960,
+    "height": 640,
+    "base": "images/portfolio/ocean-2-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/ocean-2": {
+    "width": 1920,
+    "height": 1280,
+    "base": "images/portfolio/ocean-2",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-2-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/ocean-2-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/ocean-2-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/ocean-2-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/ocean-2-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/spring-1-1440": {
+    "width": 1440,
+    "height": 1080,
+    "base": "images/portfolio/spring-1-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-1-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-1-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-1-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-1-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/spring-1-1920": {
+    "width": 1920,
+    "height": 1440,
+    "base": "images/portfolio/spring-1-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-1-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/spring-1-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-1-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/spring-1-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/spring-1-960": {
+    "width": 960,
+    "height": 720,
+    "base": "images/portfolio/spring-1-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/spring-1": {
+    "width": 1920,
+    "height": 1440,
+    "base": "images/portfolio/spring-1",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-1-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/spring-1-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-1-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-1-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/spring-1-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/spring-2-1440": {
+    "width": 1440,
+    "height": 2156,
+    "base": "images/portfolio/spring-2-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-2-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-2-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-2-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-2-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/spring-2-1920": {
+    "width": 1920,
+    "height": 2875,
+    "base": "images/portfolio/spring-2-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-2-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/spring-2-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-2-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/spring-2-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/spring-2-960": {
+    "width": 960,
+    "height": 1437,
+    "base": "images/portfolio/spring-2-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/spring-2": {
+    "width": 1920,
+    "height": 2875,
+    "base": "images/portfolio/spring-2",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-2-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/spring-2-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/spring-2-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/spring-2-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/spring-2-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/summer-1-1440": {
+    "width": 1440,
+    "height": 899,
+    "base": "images/portfolio/summer-1-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-1-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-1-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-1-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-1-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/summer-1-1920": {
+    "width": 1920,
+    "height": 1199,
+    "base": "images/portfolio/summer-1-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-1-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/summer-1-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-1-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/summer-1-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/summer-1-960": {
+    "width": 960,
+    "height": 600,
+    "base": "images/portfolio/summer-1-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/summer-1": {
+    "width": 1920,
+    "height": 1199,
+    "base": "images/portfolio/summer-1",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-1-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/summer-1-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-1-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-1-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/summer-1-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/summer-2-1440": {
+    "width": 1440,
+    "height": 960,
+    "base": "images/portfolio/summer-2-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-2-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-2-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-2-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-2-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/summer-2-1920": {
+    "width": 1920,
+    "height": 1280,
+    "base": "images/portfolio/summer-2-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-2-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/summer-2-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-2-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/summer-2-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/summer-2-960": {
+    "width": 960,
+    "height": 640,
+    "base": "images/portfolio/summer-2-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/summer-2": {
+    "width": 1920,
+    "height": 1280,
+    "base": "images/portfolio/summer-2",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-2-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/summer-2-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/summer-2-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/summer-2-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/summer-2-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/winter-1-1440": {
+    "width": 1440,
+    "height": 1152,
+    "base": "images/portfolio/winter-1-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-1-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-1-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-1-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-1-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/winter-1-1920": {
+    "width": 1920,
+    "height": 1536,
+    "base": "images/portfolio/winter-1-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-1-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/winter-1-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-1-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/winter-1-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/winter-1-960": {
+    "width": 960,
+    "height": 768,
+    "base": "images/portfolio/winter-1-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/winter-1": {
+    "width": 1920,
+    "height": 1536,
+    "base": "images/portfolio/winter-1",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-1-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/winter-1-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-1-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-1-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/winter-1-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/winter-2-1440": {
+    "width": 1440,
+    "height": 2559,
+    "base": "images/portfolio/winter-2-1440",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-1440-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-2-1440-1440.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-2-1440-1440.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-1440-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-2-1440-1440.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-2-1440-1440.jpg"
+      }
+    ]
+  },
+  "images/portfolio/winter-2-1920": {
+    "width": 1920,
+    "height": 3412,
+    "base": "images/portfolio/winter-2-1920",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-1920-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-2-1920-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/winter-2-1920-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-1920-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-2-1920-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/winter-2-1920-1920.jpg"
+      }
+    ]
+  },
+  "images/portfolio/winter-2-960": {
+    "width": 960,
+    "height": 1706,
+    "base": "images/portfolio/winter-2-960",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-960-960.webp"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-960-960.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-960-960.jpg"
+      },
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-960-960.jpg"
+      }
+    ]
+  },
+  "images/portfolio/winter-2": {
+    "width": 1920,
+    "height": 3412,
+    "base": "images/portfolio/winter-2",
+    "webp": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-960.webp"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-2-1440.webp"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/winter-2-1920.webp"
+      }
+    ],
+    "jpg": [
+      {
+        "width": 960,
+        "path": "images/portfolio/winter-2-960.jpg"
+      },
+      {
+        "width": 1440,
+        "path": "images/portfolio/winter-2-1440.jpg"
+      },
+      {
+        "width": 1920,
+        "path": "images/portfolio/winter-2-1920.jpg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+Build me a professional portfolio website for Rick Fryou — Coastal Maine Landscape Photography.
+
+Overall look & feel:
+Dark, moody, cinematic design. Minimalist UI. Mobile-first. Backgrounds nearly black with subtle ocean-blue accents. Fonts clean and modern (system stack). Layout centered, breathing room, no clutter.
+
+Pages/Sections:
+
+Home / Hero — Fullscreen hero image from the Maine coast with title “Coastal Maine • Four Seasons” and subtitle “Dark landscapes from the edge of the Atlantic.” Smooth parallax scroll effect.
+
+Portfolio — Responsive masonry grid for photography. Lightbox viewer with captions and EXIF info (camera, lens, ISO, shutter). Filter tabs for Winter, Spring, Summer, Fall, Ocean.
+
+Blog — Clean blog section with posts laid out as cards (title, featured photo, excerpt, “Read More”). Single-post page template with large images, markdown-style text, and blockquote styling.
+
+About — Bio section with small portrait and text: “Landscape photography from coastal Maine—fog, nor’easters, and four brutal, beautiful seasons.”
+
+Contact — Simple form (name, email, message) with validation, plus email fallback.
+
+Header & Navigation:
+Sticky header with logo text “RICK FRYOU” left, nav links right. Transparent over hero, dark background after scrolling. Smooth scroll to sections.
+
+Footer:
+Copyright notice, social icons (Instagram, GitHub), RSS feed link, and text: “Built with DeepSite”.
+
+Performance & Accessibility:
+
+Lazy-load all gallery images.
+
+<picture> with WebP + JPEG fallback.
+
+Keyboard-accessible lightbox and blog navigation.
+
+Strong text contrast, visible focus states.
+
+SEO & Metadata:
+
+Semantic HTML structure.
+
+OpenGraph/Twitter cards.
+
+JSON-LD for Person + ImageGallery + BlogPosting.
+
+Extras:
+
+Subtle film-grain overlay in hero (disabled if prefers-reduced-motion).
+
+Smooth hover animations: image lift + shadow.
+
+Service worker for offline viewing of images/blog.
+
+Blog posts should be easy to add manually by dropping new HTML/Markdown files into a /blog/ folder.
+
+Deliverables:
+Produce production-ready index.html, styles.css, app.js, blog.html + single-post template, manifest.webmanifest, and service worker. Include placeholder photos in /assets/.
+
+Tighten spacing: reduce section padding by 12%, increase card gutter to 1.2rem, and cap content width at 1120px
+Make the header logo a simple SVG wordmark; replace text with SVG and ensure accessible name.
+Add subtle film-grain overlay to hero via CSS pseudo-element; disable it for prefers-reduced-motion
+Implement EXIF strip with icons and monospaced numbers; ensure it collapses on small screens.
+Add RSS feed XML for ‘Latest Shoots’ using static examples; link in footer.

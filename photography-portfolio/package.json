@@ -1,0 +1,20 @@
+{
+    "name": "photography-portfolio",
+    "private": true,
+    "scripts": {
+        "sitemap": "node scripts/generate-sitemap.mjs",
+        "check:links": "node scripts/check-links.mjs",
+        "img:opt": "node scripts/optimize-images.mjs",
+        "img:verify": "node scripts/optimize-images.mjs --verify",
+        "img:fix": "node scripts/optimize-images.mjs --fix-invalid",
+        "perf": "node scripts/lighthouse.mjs"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.47.2",
+        "chrome-launcher": "^1.0.0",
+        "http-server": "^14.1.1",
+        "lighthouse": "^12.0.0",
+        "rollup-plugin-visualizer": "^6.0.3",
+        "sharp": "^0.34.3"
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Fryou Photography</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <meta name="description" content="Contact Fryou Photography — Coastal Maine landscape photography by Rich Fryou.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body class="min-h-screen bg-dark-900 text-gray-100">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+
+    <header class="fixed w-full z-50 bg-dark-900 shadow-lg">
+        <div class="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tight text-white whitespace-nowrap justify-self-start">
+                <svg width="160" height="32" viewBox="0 0 160 32" aria-label="Fryou Photography" class="h-8">
+                    <path fill="currentColor"
+                        d="M20 8h4v16h-4V8zm-12 0h4v16H8V8zm24 0h4v16h-4V8zm-12 0h4v16h-4V8zm28 0h4v16h-4V8zm-12 0h4v16h-4V8z" />
+                </svg>
+            </a>
+            <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-ocean-400 hover:text-white transition">Contact</a>
+                <a href="shop.html"
+                    class="nav-link nav-shop-btn text-sm md:text-base text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+            </nav>
+            <button class="md:hidden focus:outline-none justify-self-end" id="mobile-menu-button"
+                aria-label="Open menu">
+                <i data-feather="menu" class="text-white"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
+            <div class="flex flex-col space-y-4 items-center text-center">
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-ocean-400 hover:text-white transition">Contact</a>
+                <a href="shop.html"
+                    class="nav-link nav-shop-btn block text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-28 pb-16">
+        <div class="container mx-auto px-6 max-w-[900px]">
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Get In Touch</h1>
+            <p class="mt-6 text-gray-300">Email: <a href="mailto:fryou.photography@gmail.com"
+                    class="text-ocean-400 hover:underline">fryou.photography@gmail.com</a></p>
+            <p class="mt-2 text-gray-300">Instagram: <a href="https://www.instagram.com/fryouphotography/"
+                    class="text-ocean-400 hover:underline">@fryouphotography</a></p>
+        </div>
+    </main>
+
+    <footer class="mt-20 border-t border-white/10 py-12 text-gray-400 text-sm break-normal">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="index.html" class="text-2xl font-bold tracking-tight text-white whitespace-nowrap">Fryou
+                        Photography</a>
+                    <p class="text-gray-500 text-sm">Coastal Maine Landscape Photography</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="flex items-center gap-8">
+                        <a href="https://www.instagram.com/fryouphotography/" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="Instagram">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://github.com/rickfryou" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="GitHub">
+                            <i data-feather="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="rss.xml"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            title="RSS Feed" aria-label="RSS Feed">
+                            <i data-feather="rss" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <a href="shop.html"
+                        class="mt-4 flex items-center gap-2 text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500 whitespace-nowrap"
+                        title="Shop" aria-label="Shop">
+                        <i data-feather="shopping-cart" class="w-5 h-5"></i><span>Shop</span>
+                    </a>
+                </div>
+                <div class="text-center md:text-right">
+                    <p>&copy; <span id="year"></span> All rights reserved.</p>
+                    <p>Fryou Photography</p>
+                    <p>Built by <a href="https://github.com/rickveloper"
+                            class="text-ocean-400 hover:underline">Rickveloper</a></p>
+                    <div class="mt-4">
+                        <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-sm bg-ocean-700 text-white border border-ocean-500 hover:bg-ocean-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="Buy me a coffee">
+                            <span>☕</span>
+                            <span>Buy me a coffee</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 800, once: true });
+        feather.replace();
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', function () { mobileMenu.classList.toggle('hidden'); });
+    </script>
+    <script src="src/js/lazy-observer.js" type="module"></script>
+    <script src="src/js/cms.js" type="module"></script>
+    <script src="src/js/accessibility.js"></script>
+
+</body>
+
+</html>

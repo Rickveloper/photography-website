@@ -1,0 +1,168 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Ensure no gray borders on hero sections */
+* {
+  box-sizing: border-box;
+}
+
+.hero-section,
+.hero-section * {
+  border: none !important;
+  outline: none !important;
+}
+
+h1 {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+p {
+  color: rgb(107, 114, 128);
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.card {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid lightgray;
+  border-radius: 16px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Remove fixed aspect hacks; Tailwind classes control aspect */
+.hero picture,
+.hero img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero,
+body.min-h-screen {
+  background:
+    linear-gradient(180deg, rgba(10, 11, 13, .6), rgba(10, 11, 13, .85)),
+    url("assets/hero.jpg") center/cover no-repeat;
+}
+
+/* Hero: full-viewport image and readable text */
+.hero-section {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.hero-picture {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.film-grain picture,
+.film-grain picture>img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* fill without distortion */
+}
+
+.film-grain .z-10 {
+  /* the text wrapper you already have */
+  animation: heroFade 800ms ease-out both;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .55);
+  /* improve contrast on bright images */
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Section spacing handled by Tailwind utilities in HTML */
+section {}
+
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 4rem;
+  padding-top: 3rem;
+}
+
+/* About/Contact spacing via Tailwind classes in HTML */
+
+footer {
+  margin-top: 6rem;
+}
+
+#contact {
+  margin-bottom: 5rem;
+}
+
+footer .container {
+  gap: 2rem;
+}
+
+footer a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+footer .grid>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

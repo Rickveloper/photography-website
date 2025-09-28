@@ -1,0 +1,31 @@
+name: Nightly Site Backup
+
+on:
+  schedule:
+    - cron: '0 5 * * *' # 05:00 UTC nightly
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set date
+        id: date
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+
+      - name: Create zip archive
+        run: |
+          mkdir -p artifacts
+          zip -r artifacts/site-backup-${{ steps.date.outputs.date }}.zip . -x '*.git*' 'node_modules/*'
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-backup-${{ steps.date.outputs.date }}
+          path: artifacts/*.zip
+          if-no-files-found: error
+
+

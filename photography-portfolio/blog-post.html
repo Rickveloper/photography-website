@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasing Winter Storms | Fryou Photography</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <meta name="description"
+        content="Braving sub-zero temperatures to capture the raw power of nor'easters along the Maine coast.">
+
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="Chasing Winter Storms | Fryou Photography">
+    <meta property="og:description"
+        content="Braving sub-zero temperatures to capture the raw power of nor'easters along the Maine coast.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="blog-post.html">
+    <meta property="og:image" content="public/images/portfolio/winter-1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:published_time" content="2023-01-15">
+    <meta property="article:author" content="Rich Fryou">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Chasing Winter Storms",
+        "description": "Braving sub-zero temperatures to capture the raw power of nor'easters along the Maine coast.",
+        "author": {
+            "@type": "Person",
+            "name": "Rich Fryou",
+            "url": "index.html"
+        },
+        "datePublished": "2023-01-15",
+        "image": "https://rickfryou.com/public/images/portfolio/winter-1.jpg"
+    }
+    </script>
+
+    <!-- Favicon -->
+
+
+    <!-- Styles & Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#171717',
+                            700: '#262626',
+                            600: '#404040',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.min.js"></script>
+    <script>
+        // Production CMS endpoint. Include port if not reverse-proxied.
+        window.CMS_BASE = "http://YOUR_SERVER_OR_DOMAIN:1337";
+    </script>
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            @apply bg-dark-900 text-gray-100 font-sans antialiased;
+        }
+
+        .prose {
+            @apply max-w-3xl mx-auto;
+        }
+
+        .prose h2 {
+            @apply text-2xl font-bold mt-12 mb-6 text-white;
+        }
+
+        .prose h3 {
+            @apply text-xl font-bold mt-8 mb-4 text-white;
+        }
+
+        .prose p {
+            @apply text-gray-400 mb-6 leading-relaxed;
+        }
+
+        .prose a {
+            @apply text-ocean-400 hover:underline;
+        }
+
+        .prose blockquote {
+            @apply border-l-4 border-ocean-500 pl-6 italic text-gray-300 my-8;
+        }
+
+        .prose ul {
+            @apply list-disc pl-6 mb-6;
+        }
+
+        .prose li {
+            @apply text-gray-400 mb-3;
+        }
+
+        .prose img {
+            @apply rounded-sm my-8 w-full;
+        }
+
+        .image-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-dark-900 shadow-lg">
+        <div class="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tight text-white whitespace-nowrap justify-self-start">
+                <svg width="160" height="32" viewBox="0 0 160 32" aria-label="Fryou Photography" class="h-8">
+                    <path fill="currentColor"
+                        d="M20 8h4v16h-4V8zm-12 0h4v16H8V8zm24 0h4v16h-4V8zm-12 0h4v16h-4V8zm28 0h4v16h-4V8zm-12 0h4v16h-4V8z" />
+                </svg>
+            </a>
+            <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link text-ocean-400 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html" class="nav-link nav-shop-btn text-gray-300 hover:text-white transition">Shop</a>
+            </nav>
+            <button class="md:hidden focus:outline-none justify-self-end" id="mobile-menu-button"
+                aria-label="Open menu">
+                <i data-feather="menu" class="text-white"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
+            <div class="flex flex-col space-y-4 items-center text-center">
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link text-ocean-400 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html"
+                    class="nav-link nav-shop-btn block text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pt-28 pb-16">
+        <div class="container mx-auto px-6 max-w-[1120px]">
+            <!-- CMS-rendered post -->
+            <div id="blog-post" class="max-w-4xl mx-auto"></div>
+
+            <!-- Related Posts -->
+            <div class="max-w-4xl mx-auto mt-20">
+                <h3 class="text-2xl font-bold mb-8 text-white">More From The Journal</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="blog-post.html"
+                        class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/winter-2.jpg" alt="Ice Formations"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold mb-2 text-white">Abstract Ice Formations</h4>
+                            <p class="text-gray-300 mb-2">February 22, 2023</p>
+                            <p class="text-gray-400">Finding unexpected beauty in the frozen tidal zones of Casco Bay.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="blog-post.html"
+                        class="block bg-dark-700 rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/summer-1.jpg" alt="Photography Gear"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold mb-2 text-white">Coastal Photography Gear Essentials</h4>
+                            <p class="text-gray-300 mb-2">May 15, 2023</p>
+                            <p class="text-gray-400">The equipment that survives salt spray, freezing temps, and
+                                everything in between.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-white/10 py-12 text-gray-400 text-sm break-normal">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="index.html" class="text-2xl font-bold tracking-tight text-white whitespace-nowrap">Fryou
+                        Photography</a>
+                    <p class="text-gray-500 text-sm">Coastal Maine Landscape Photography</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="flex items-center gap-8">
+                        <a href="https://www.instagram.com/fryouphotography/" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="Instagram">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://github.com/rickfryou" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="GitHub">
+                            <i data-feather="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="rss.xml"
+                            class="text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            title="RSS Feed" aria-label="RSS Feed">
+                            <i data-feather="rss" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <a href="shop.html"
+                        class="mt-4 flex items-center gap-2 text-gray-400 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500 whitespace-nowrap"
+                        title="Shop" aria-label="Shop">
+                        <i data-feather="shopping-cart" class="w-5 h-5"></i><span>Shop</span>
+                    </a>
+                </div>
+                <div class="text-center md:text-right">
+                    <p>&copy; <span id="year"></span> All rights reserved.</p>
+                    <p>Fryou Photography</p>
+                    <p>Built by <a href="https://github.com/rickveloper"
+                            class="text-ocean-400 hover:underline">Rickveloper</a></p>
+                    <div class="mt-4">
+                        <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-sm bg-ocean-700 text-white border border-ocean-500 hover:bg-ocean-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                            aria-label="Buy me a coffee">
+                            <span>☕</span>
+                            <span>Buy me a coffee</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Initialize LazyLoad
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazyload",
+            threshold: 100
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Hydrate post by slug
+        if (window.CMS && window.CMS.hydratePostBySlug) {
+            window.CMS.hydratePostBySlug();
+        }
+    </script>
+    <script src="src/js/lazy-observer.js" type="module"></script>
+    <script src="src/js/cms.js" type="module"></script>
+
+</body>
+
+</html>

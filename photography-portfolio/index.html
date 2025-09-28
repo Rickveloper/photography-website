@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fryou Photography | Coastal Maine Landscape Photography</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/styles/utilities.css">
+    <meta name="description"
+        content="Dark landscapes from the edge of the Atlantic. Coastal Maine photography capturing four brutal, beautiful seasons.">
+
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="Fryou Photography | Coastal Maine Landscape Photography">
+    <meta property="og:description"
+        content="Dark landscapes from the edge of the Atlantic. Coastal Maine photography capturing four brutal, beautiful seasons.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rickfryou.com">
+    <meta property="og:image" content="public/images/hero/hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon -->
+
+    <link rel="preload" as="image" href="public/images/hero/hero.webp"
+  imagesrcset="public/images/hero/hero-960.webp 960w, public/images/hero/hero-1440.webp 1440w, public/images/hero/hero-1920.webp 1920w"
+  imagesizes="(min-width: 1024px) 90vw, 100vw" type="image/webp">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <!-- Styles & Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#171717',
+                            700: '#262626',
+                            600: '#404040',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.min.js"></script>
+
+    <script>
+        // Production CMS endpoint. Include port if not reverse-proxied.
+        window.CMS_BASE = "http://YOUR_SERVER_OR_DOMAIN:1337";
+    </script>
+
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rich Fryou",
+        "jobTitle": "Landscape Photographer",
+        "url": "https://rickfryou.com",
+        "sameAs": [
+            "https://www.instagram.com/fryouphotography/",
+            "https://github.com/rickfryou"
+        ],
+        "description": "Coastal Maine landscape photographer capturing the brutal beauty of four seasons along the Atlantic."
+    }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            @apply bg-dark-900 text-gray-100 font-sans antialiased;
+        }
+
+        /* Remove conflicting custom thumbnail sizing */
+        /* Standardize hero behavior and readability */
+        .film-grain {
+            position: relative;
+        }
+
+        .film-grain::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+            pointer-events: none;
+            z-index: 10;
+            mix-blend-mode: overlay;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .film-grain::before {
+                display: none;
+            }
+        }
+
+        .image-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            opacity: 0;
+        }
+
+        .fade-in.loaded {
+            opacity: 1;
+            transition: opacity .6s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in {
+                opacity: 1;
+            }
+
+            .fade-in.loaded {
+                transition: none;
+            }
+        }
+
+        .cv-auto {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 1000px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-4 grid grid-cols-3 items-center">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tight text-white whitespace-nowrap justify-self-start">
+                <svg width="160" height="32" viewBox="0 0 160 32" aria-label="Fryou Photography" class="h-8">
+                    <path fill="currentColor"
+                        d="M20 8h4v16h-4V8zm-12 0h4v16H8V8zm24 0h4v16h-4V8zm-12 0h4v16h-4V8zm28 0h4v16h-4V8zm-12 0h4v16h-4V8z" />
+                </svg>
+            </a>
+            <nav class="hidden md:flex space-x-8 justify-center justify-self-center">
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link text-gray-300 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html" class="nav-link nav-shop-btn text-gray-300 hover:text-white transition">Shop</a>
+            </nav>
+            <button class="md:hidden focus:outline-none justify-self-end" id="mobile-menu-button"
+                aria-label="Open menu">
+                <i data-feather="menu" class="text-white"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-dark-800 w-full py-4 px-6" id="mobile-menu">
+            <div class="flex flex-col space-y-2 items-center text-center">
+                <a href="index.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Home</a>
+                <a href="blog.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Blog</a>
+                <a href="about.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">About</a>
+                <a href="contact.html" class="nav-link block px-4 py-2 text-gray-300 hover:text-white transition">Contact</a>
+                <a href="shop.html"
+                    class="nav-link nav-shop-btn block text-white/80 hover:text-white transition whitespace-nowrap">Shop</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="main-content" class="hero-section relative overflow-hidden film-grain cv-auto">
+        <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+        <picture class="hero-picture absolute inset-0">
+            <source type="image/webp" srcset="public/images/hero/hero-960.webp 960w, public/images/hero/hero-1440.webp 1440w, public/images/hero/hero-1920.webp 1920w" sizes="100vw">
+            <source srcset="public/images/hero/hero-960.jpg 960w, public/images/hero/hero-1440.jpg 1440w, public/images/hero/hero-1920.jpg 1920w" type="image/jpeg" sizes="100vw">
+            <img src="public/images/hero/hero.jpg" alt="Coastal Maine shoreline at dawn"
+                class="hero-image fade-in" width="1920" height="1280" loading="eager" fetchpriority="high"
+                decoding="async" style="background:#e6e6e6">
+        </picture>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto" data-aos="fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Coastal Maine • Four Seasons</h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8">Dark landscapes from the edge of the Atlantic.</p>
+            <a href="#portfolio"
+                class="inline-block px-8 py-3 btn-gradient text-white transition-all duration-300 rounded-sm">
+                View Portfolio
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 text-center z-10">
+            <a href="#portfolio" class="inline-block animate-float" aria-label="Scroll to portfolio">
+                <i data-feather="chevron-down" class="text-white w-10 h-10"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 md:py-24 bg-dark-900 cv-auto">
+        <div class="container mx-auto px-6 max-w-[1120px]">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Portfolio</h2>
+                <div class="w-20 h-1 gradient-ocean mx-auto rounded-full"></div>
+            </div>
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center mb-12 gap-2" data-aos="fade-up">
+                <button
+                    class="px-4 py-2 btn-gradient text-white transition rounded-sm filter-btn active"
+                    data-filter="all">All Seasons</button>
+                <button
+                    class="px-4 py-2 bg-dark-800 text-gray-300 hover:bg-ocean-600 hover:text-white transition rounded-sm filter-btn"
+                    data-filter="winter">Winter</button>
+                <button
+                    class="px-4 py-2 bg-dark-800 text-gray-300 hover:bg-ocean-600 hover:text-white transition rounded-sm filter-btn"
+                    data-filter="spring">Spring</button>
+                <button
+                    class="px-4 py-2 bg-dark-800 text-gray-300 hover:bg-ocean-600 hover:text-white transition rounded-sm filter-btn"
+                    data-filter="summer">Summer</button>
+                <button
+                    class="px-4 py-2 bg-dark-800 text-gray-300 hover:bg-ocean-600 hover:text-white transition rounded-sm filter-btn"
+                    data-filter="fall">Fall</button>
+                <button
+                    class="px-4 py-2 bg-dark-800 text-gray-300 hover:bg-ocean-600 hover:text-white transition rounded-sm filter-btn"
+                    data-filter="ocean">Ocean</button>
+            </div>
+            <!-- Uniform Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="portfolio-grid">
+                <!-- Winter scene -->
+                <div class="portfolio-item winter" data-aos="fade-up" data-category="winter">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/winter-1.jpg" alt="Snowy shoreline in winter"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                            oncontextmenu="return false">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                data-image="public/images/portfolio/winter-1.jpg" data-title="Winter scene"
+                                data-exif="Placeholder EXIF">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Spring scene -->
+                <div class="portfolio-item spring" data-aos="fade-up" data-category="spring">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/spring-1.jpg" alt="Coastal meadow in spring"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                            oncontextmenu="return false">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                data-image="public/images/portfolio/spring-1.jpg" data-title="Spring scene"
+                                data-exif="Placeholder EXIF">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Summer scene -->
+                <div class="portfolio-item summer" data-aos="fade-up" data-category="summer">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/summer-1.jpg" alt="Rocky coast under summer light"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                            oncontextmenu="return false">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                data-image="public/images/portfolio/summer-1.jpg" data-title="Summer scene"
+                                data-exif="Placeholder EXIF">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fall scene -->
+                <div class="portfolio-item fall" data-aos="fade-up" data-category="fall">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/fall-1.jpg" alt="Autumn foliage along the coast"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                            oncontextmenu="return false">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                data-image="public/images/portfolio/fall-1.jpg" data-title="Fall scene"
+                                data-exif="Placeholder EXIF">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ocean scene -->
+                <div class="portfolio-item ocean" data-aos="fade-up" data-category="ocean">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/ocean-1.jpg" alt="Ocean waves on granite"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                            oncontextmenu="return false">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                data-image="public/images/portfolio/ocean-1.jpg" data-title="Ocean scene"
+                                data-exif="Placeholder EXIF">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Extras -->
+                <div class="portfolio-item winter" data-aos="fade-up" data-category="winter">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/winter-2.jpg" alt="Snow-dusted pines in winter"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                oncontextmenu="return false" data-image="public/images/portfolio/winter-2.jpg"
+                                data-title="Winter 2" data-exif="Placeholder EXIF">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item spring" data-aos="fade-up" data-category="spring">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/spring-2.jpg" alt="Spring greenery by the shore"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                oncontextmenu="return false" data-image="public/images/portfolio/spring-2.jpg"
+                                data-title="Spring 2" data-exif="Placeholder EXIF">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item summer" data-aos="fade-up" data-category="summer">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/summer-2.jpg" alt="Warm sunset over rocks"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                oncontextmenu="return false" data-image="public/images/portfolio/summer-2.jpg"
+                                data-title="Summer 2" data-exif="Placeholder EXIF">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item fall" data-aos="fade-up" data-category="fall">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/fall-2.jpg" alt="Golden leaves in autumn"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                oncontextmenu="return false" data-image="public/images/portfolio/fall-2.jpg"
+                                data-title="Fall 2" data-exif="Placeholder EXIF">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item ocean" data-aos="fade-up" data-category="ocean">
+                    <div class="relative overflow-hidden rounded-sm image-hover">
+                        <picture>
+                            <img src="public/images/portfolio/ocean-2.jpg" alt="Breaking wave and sea spray"
+                                class="w-full aspect-[4/3] object-cover fade-in" loading="lazy" decoding="async"
+                                width="1600" height="1200" sizes="(max-width: 768px) 50vw, 33vw">
+                        </picture>
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="text-white px-4 py-2 border border-white rounded-sm view-image"
+                                oncontextmenu="return false" data-image="public/images/portfolio/ocean-2.jpg"
+                                data-title="Ocean 2" data-exif="Placeholder EXIF">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox Modal -->
+            <div class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-6" id="lightbox">
+                <button class="absolute top-6 right-6 text-white text-3xl focus:outline-none" id="close-lightbox">
+                    <i data-feather="x"></i>
+                </button>
+                <div class="max-w-4xl w-full">
+                    <img src="" alt="" class="w-full h-auto max-h-[80vh] object-contain" id="lightbox-image" loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 50vw">
+                    <div class="mt-6 text-white">
+                        <h3 class="text-2xl font-bold" id="lightbox-title"></h3>
+                        <div id="lightbox-exif" class="mt-4 bg-dark-800/50 p-4 rounded-sm">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div class="flex items-center">
+                                    <i data-feather="camera" class="w-5 h-5 mr-2 text-ocean-300"></i>
+                                    <span class="font-mono text-sm">Sony a6300</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-feather="maximize" class="w-5 h-5 mr-2 text-ocean-300"></i>
+                                    <span class="font-mono text-sm" id="exif-focal">24mm</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-feather="aperture" class="w-5 h-5 mr-2 text-ocean-300"></i>
+                                    <span class="font-mono text-sm" id="exif-aperture">ƒ/11</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-feather="clock" class="w-5 h-5 mr-2 text-ocean-300"></i>
+                                    <span class="font-mono text-sm" id="exif-shutter">1/125s</span>
+                                </div>
+                            </div>
+                            <div class="mt-3 flex items-center">
+                                <i data-feather="sun" class="w-5 h-5 mr-2 text-ocean-300"></i>
+                                <span class="font-mono text-sm" id="exif-iso">ISO 100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Preview Section -->
+            <section id="blog" class="py-16 md:py-24 bg-dark-800">
+                <div class="container mx-auto px-6 max-w-[1120px]">
+                    <div data-aos="fade-up">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">From The Journal</h2>
+                        <div class="w-20 h-1 gradient-ocean rounded-full"></div>
+                    </div>
+
+                    <div id="latest-posts" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-8 items-stretch blog-grid">
+                        <!-- Loading skeletons -->
+                        <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                            <div class="loading-skeleton-image"></div>
+                            <div class="p-6">
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                            </div>
+                        </div>
+                        <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                            <div class="loading-skeleton-image"></div>
+                            <div class="p-6">
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                            </div>
+                        </div>
+                        <div class="bg-dark-700 rounded-sm overflow-hidden loading-skeleton">
+                            <div class="loading-skeleton-image"></div>
+                            <div class="p-6">
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                                <div class="loading-skeleton loading-skeleton-text"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12" data-aos="fade-up">
+                        <a href="blog.html"
+                            class="inline-block px-6 py-3 btn-gradient text-white transition rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500">
+                            View All Posts
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="py-16 md:py-24 bg-dark-900">
+                <div class="container mx-auto px-6 max-w-[1120px]">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+                        <div class="md:w-1/3 mb-8 md:mb-0" data-aos="fade-right">
+                            <div
+                                class="relative overflow-hidden rounded-full w-48 h-48 mx-auto md:mx-0 border-4 border-ocean-600">
+                                <picture>
+                                    <img src="public/images/featured/rf-winter-01.jpg"
+                                        alt="Portrait placeholder for Rich Fryou" class="w-full h-full object-cover"
+                                        loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 50vw">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 md:pl-12" data-aos="fade-left">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">About Rich</h2>
+                            <div class="prose prose-invert max-w-none">
+                                <p class="text-lg text-gray-300 mb-4">
+                                    Landscape photography from coastal Maine—fog, nor'easters, and four brutal,
+                                    beautiful seasons.
+                                </p>
+                <p class="text-gray-300 mb-4">
+                    Based in York, Maine, Rich has spent over a decade documenting the
+                    ever-changing moods of the Atlantic coastline. His work focuses on the intersection
+                    of natural forces and human presence in these marginal spaces.
+                </p>
+                <p class="text-gray-300">
+                    Using primarily Sony a6300, Rich's photographic approach combines technical
+                    precision with an intuitive response to weather and light conditions.
+                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-16 md:py-24 bg-dark-800">
+                <div class="container mx-auto px-6 max-w-[1120px]">
+                    <div data-aos="fade-up" class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Get In Touch</h2>
+                        <div class="w-20 h-1 gradient-ocean mx-auto rounded-full"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mt-12">
+                        <div data-aos="fade-right">
+                            <h3 class="text-xl font-bold mb-4 text-white">Contact Form</h3>
+                            <form id="contact-form" class="space-y-4" novalidate>
+                                <div>
+                                    <label for="name" class="block text-gray-300 mb-2">Name</label>
+                                    <input type="text" id="name" name="name" required autocomplete="name"
+                                        class="w-full px-4 py-2 bg-dark-700 border border-dark-600 text-white focus:border-ocean-500 focus:outline-none rounded-sm">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-300 mb-2">Email</label>
+                                    <input type="email" id="email" name="email" required autocomplete="email"
+                                        pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                                        class="w-full px-4 py-2 bg-dark-700 border border-dark-600 text-white focus:border-ocean-500 focus:outline-none rounded-sm">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-gray-300 mb-2">Message</label>
+                                    <textarea id="message" name="message" rows="5" required
+                                        class="w-full px-4 py-2 bg-dark-700 border border-dark-600 text-white focus:border-ocean-500 focus:outline-none rounded-sm"></textarea>
+                                </div>
+                                <button type="submit"
+                                    class="px-6 py-3 btn-gradient text-white transition rounded-sm w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+
+                        <div data-aos="fade-left">
+                            <h3 class="text-xl font-bold mb-4 text-white">Other Ways to Connect</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-ocean-600 p-3 rounded-full mr-4">
+                                        <i data-feather="mail" class="text-white w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-white mb-1">Email</h4>
+                        <a href="mailto:fryou.photography@gmail.com"
+                            class="text-ocean-300 hover:underline">fryou.photography@gmail.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="bg-ocean-600 p-3 rounded-full mr-4">
+                                        <i data-feather="instagram" class="text-white w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-white mb-1">Instagram</h4>
+                        <a href="https://www.instagram.com/fryouphotography/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-ocean-300 hover:underline">@fryouphotography</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="bg-ocean-600 p-3 rounded-full mr-4">
+                                        <i data-feather="map-pin" class="text-white w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-white mb-1">Location</h4>
+                                        <p class="text-gray-400">York, Maine</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 pt-8 border-t border-dark-700">
+                                <h4 class="text-lg font-semibold text-white mb-4">Print Inquiries</h4>
+                                        <p class="text-gray-300 mb-4">
+                                            Limited edition fine art prints are available. Please inquire for sizes, pricing,
+                                            and availability.
+                                        </p>
+                                        <p class="text-gray-300">
+                                            Commissions for commercial or editorial work are considered on a project basis.
+                                        </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="mt-20 border-t border-white/10 py-12 text-gray-300 text-sm break-normal">
+                <div class="container mx-auto px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                        <div class="mb-6 md:mb-0 text-center md:text-left">
+                            <a href="index.html"
+                                class="text-2xl font-bold tracking-tight text-white whitespace-nowrap">Fryou
+                                Photography</a>
+                            <p class="text-gray-500 text-sm">Coastal Maine Landscape Photography</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center">
+                            <div class="flex items-center gap-8">
+                                <a href="https://www.instagram.com/fryouphotography/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                                    aria-label="Instagram">
+                                    <i data-feather="instagram" class="w-5 h-5"></i>
+                                </a>
+                                <a href="shop.html"
+                                    class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                                    title="Shop" aria-label="Shop">
+                                    <i data-feather="shopping-cart" class="w-5 h-5"></i>
+                                </a>
+                                <a href="rss.xml"
+                                    class="text-gray-300 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                                    title="RSS Feed" aria-label="RSS Feed">
+                                    <i data-feather="rss" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <p>&copy; <span id="year">2025</span> All rights reserved.</p>
+                            <p>Fryou Photography</p>
+                            <p>Built by <a href="https://github.com/rickveloper"
+                                    class="text-ocean-300 hover:underline">Rickveloper</a></p>
+                            <div class="mt-4 flex justify-center">
+                                <a href="https://www.buymeacoffee.com/Rickveloper" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-sm bg-ocean-700 text-white border border-ocean-500 hover:bg-ocean-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean-500"
+                                    aria-label="Buy me a coffee">
+                                    <span>☕</span>
+                                    <span>Buy me a coffee</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+            <!-- Scripts -->
+            <script>
+                // Initialize AOS
+                AOS.init({
+                    duration: 800,
+                    once: true
+                });
+
+                // Initialize Feather Icons
+                feather.replace();
+
+                // Initialize LazyLoad
+                var lazyLoadInstance = new LazyLoad({
+                    elements_selector: ".lazyload",
+                    threshold: 100
+                });
+
+                // Header scroll effect
+                window.addEventListener('scroll', function () {
+                    const header = document.getElementById('header');
+                    if (window.scrollY > 50) {
+                        header.classList.add('bg-dark-900', 'shadow-lg');
+                        header.classList.remove('bg-transparent');
+                    } else {
+                        header.classList.add('bg-transparent');
+                        header.classList.remove('bg-dark-900', 'shadow-lg');
+                    }
+                });
+
+                // Mobile menu toggle
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Portfolio filtering
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        // Update active state
+                        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-ocean-500', 'text-white', 'border-2', 'border-ocean-300'));
+                        this.classList.add('active', 'bg-ocean-500', 'text-white', 'border-2', 'border-ocean-300');
+
+                        // Filter items
+                        const filterValue = this.getAttribute('data-filter');
+
+                        portfolioItems.forEach(item => {
+                            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+
+                // Lightbox functionality
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImage = document.getElementById('lightbox-image');
+                const lightboxTitle = document.getElementById('lightbox-title');
+                const closeLightbox = document.getElementById('close-lightbox');
+                const viewButtons = document.querySelectorAll('.view-image');
+
+                viewButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        lightboxImage.src = this.getAttribute('data-image');
+                        lightboxTitle.textContent = this.getAttribute('data-title');
+
+                        // Parse EXIF data from button
+                        const exifData = this.getAttribute('data-exif').split(' • ');
+                        document.getElementById('exif-focal').textContent = exifData[1];
+                        document.getElementById('exif-aperture').textContent = exifData[2];
+                        document.getElementById('exif-shutter').textContent = exifData[3];
+                        document.getElementById('exif-iso').textContent = exifData[4];
+
+                        lightbox.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                        feather.replace(); // Ensure icons are rendered
+                    });
+                });
+
+                closeLightbox.addEventListener('click', function () {
+                    lightbox.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+
+                // Close lightbox when clicking outside
+                lightbox.addEventListener('click', function (e) {
+                    if (e.target === lightbox) {
+                        lightbox.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+
+                // Form submission
+                const contactForm = document.getElementById('contact-form');
+
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Here you would typically send the form data to a server
+                    // For this example, we'll just show an alert
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();
+                });
+
+                // Set current year in footer
+                document.getElementById('year').textContent = new Date().getFullYear();
+
+                // Hydrate latest posts from CMS
+                if (window.CMS && window.CMS.hydrateLatestOnIndex) {
+                    window.CMS.hydrateLatestOnIndex(3);
+                }
+            </script>
+    <script src="src/js/lazy-observer.js" type="module"></script>
+    <script src="src/js/cms.js" type="module"></script>
+    <script src="src/js/accessibility.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fryou Photography — Latest Shoots</title>
+    <description>Recent photography shoots from coastal Maine by Rich Fryou</description>
+    <link>index.html</link>
+    <atom:link href="rss.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <copyright>Copyright © 2025 Fryou Photography. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 15 Nov 2023 10:00:00 -0500</lastBuildDate>
+    <ttl>1440</ttl>
+    
+    <item>
+      <title>Winter Storm Series</title>
+      <description>New collection from the January nor'easter along Pemaquid Point</description>
+      <link>index.html#portfolio</link>
+      <guid isPermaLink="false">winter-storm-2023-01-15</guid>
+      <pubDate>Mon, 15 Jan 2023 08:00:00 -0500</pubDate>
+      <enclosure url="assets/portfolio/winter-1.jpg" length="5242880" type="image/jpeg"/>
+    </item>
+    
+    <item>
+      <title>Autumn Colors Collection</title>
+      <description>Fall foliage along the coastal trails of Acadia National Park</description>
+      <link>index.html#portfolio</link>
+      <guid isPermaLink="false">autumn-colors-2023-10-12</guid>
+      <pubDate>Thu, 12 Oct 2023 09:00:00 -0500</pubDate>
+      <enclosure url="assets/portfolio/fall-1.jpg" length="4194304" type="image/jpeg"/>
+    </item>
+    
+    <item>
+      <title>Ocean Abstracts</title>
+      <description>Minimalist compositions from the tidal zones of Casco Bay</description>
+      <link>index.html#portfolio</link>
+      <guid isPermaLink="false">ocean-abstracts-2023-08-22</guid>
+      <pubDate>Tue, 22 Aug 2023 10:30:00 -0500</pubDate>
+      <enclosure url="assets/portfolio/ocean-1.jpg" length="6291456" type="image/jpeg"/>
+    </item>
+  </channel>
+</rss>
